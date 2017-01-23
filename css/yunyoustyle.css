@@ -3,12 +3,13 @@
 @font-face {font-family:经典繁毛楷; src: url("font/经典繁毛楷.ttf")} 
 
 body {
-  background: #000000 url(image/back.jpg) center no-repeat;
+  background: #000000 url(../image/back.jpg) center no-repeat;
   background-attachment:fixed;
   background-size:cover;
   position: relative;
   padding-top: 60px;
   font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";   
+  color: #fff;
 }
 
 button {

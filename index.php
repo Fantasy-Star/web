@@ -84,9 +84,11 @@ echo "</script>";
 }
 ?>
 <!doctype html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FantasyStar-幻星科幻协会</title>
 <?php
   include("headlink.php");
@@ -94,16 +96,7 @@ echo "</script>";
 
 <style type="text/css">
 body {  
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";   
-  background-color: #000000;
-  background-image: url(image/back.jpg);
-  background-attachment: fixed;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0;
-  text-align:center;
-  color: #fff;
+  padding-top: 30px;
 }
 </style>
 
@@ -113,41 +106,38 @@ body {
 <body>
 <div class="container">
   <div class="row">
-    <div ontouchstart="this.classList.toggle('hover');">
       <div  class="col-md-12"> 
       <a href="http://weibo.com/u/3784345967?from=myfollow_all&is_all=1#_rnd1475328154475" target="_blank">
-        <div > <img src="image/logo.png" alt="" width="150" height="150" id="logo"/> </div>
+        <div > <img class="img-rounded" src="image/logo.png" alt=""  id="logo"/> </div>
         </a> 
 
          <hr >
       </div>
-    </div>
    
     </div>
 
   <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 yunyou-bgblur yunyou-background">
 
-  <body>
     
-    <div class="" style="padding:40px 0px 20px 0px;">
+  <div class="" style="padding:30px 20px 20px 20px;margin:0px 5px 0px 5px;">
       <form ACTION="<?php echo $loginFormAction; ?>" id="log" name="log" method="POST" class="form-horizontal">
 
 
 
       <div class="form-group">
-                <div class="input-group col-sm-offset-2 col-sm-8 yunyou-bgblur">
-                  <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span>&nbsp;学号</div>
+              <div class="input-group col-sm-12 yunyou-bgblur">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span>&nbsp;学号</div>
 
-<script src="js/checkforlogin.js"></script>
+      <script src="js/checkforlogin.js"></script>
 
-                  <input name="user" id="userid" type="text" autofocus required="required" class="form-control" autofocus
+                <input name="user" id="userid" type="text" autofocus required="required" class="form-control" autofocus
         placeholder="请输入您的学号" pattern="[0-9]{12}" title="学号是12位数字！" maxlength="12" onblur="funtest100()">
 
                 <div class="input-group-addon" id="useridSpan"><span  class='glyphicon glyphicon-info-sign'></span></div>  
-                </div>
+              </div>
       </div>
       <div class="form-group">
-        <div class="input-group col-sm-offset-2 col-sm-8 yunyou-bgblur">
+        <div class="input-group col-sm-12 yunyou-bgblur">
          <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>&nbsp;密码</div>
          <input name="password" type="password" required="required" class="form-control" id="password" placeholder="请输入您的密码" pattern="^[a-zA-Z]\w{5,17}$"  title="密码至少六位！" maxlength="18">
          <div class="input-group-addon" id="PASSWORDTIP"><span  class='glyphicon glyphicon-asterisk'></span></div>
@@ -173,21 +163,23 @@ document.getElementById('password').onkeypress = detectCapsLock;
 </script> 
 
 
-      <div class="form-group">
-
-      <div class="col-sm-offset-1 col-sm-10" style="margin-top:5px; ">
-        <div class="col-md-6 col-sm-6">
+    
+  <div class="col-md-12">
+  <div class="form-group">
+        <div class="col-md-6 col-sm-6"  style="margin-top:8px;margin-bottom: 8px;">
             <button type="submit" class="btn btn-inverse btn-block " name="login" id="login" formmethod="POST" formtarget="_self">登&nbsp;录</button>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6"  style="margin-top:8px;margin-bottom: 8px;">
             <button type="submit" class="btn btn-inverse btn-block " name="register"  id="register" formaction="register.php" formmethod="POST" formnovalidate>注&nbsp;册</button>
         </div>
-        </div>
-    </div> 
+  </div>
+  </div>
+    
 
     </form>
   </div>
   </div>
+  <!--row-->
 </div>
 
 <?php

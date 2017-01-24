@@ -15,4 +15,8 @@
   </div>
 </footer>
 
+<<<<<<< HEAD
 <script color="102,204,255" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+=======
+<script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+>>>>>>> origin/master

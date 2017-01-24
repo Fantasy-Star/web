@@ -61,7 +61,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "yourword")) {
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $_SESSION['webname'];?>-留言</title>
 
 
@@ -69,24 +71,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "yourword")) {
 <?php
 include("headlink.php");
   ?>
-
-
 <style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-	color:rgba(255,255,255,1.00);
-  padding-top: 60px;
-}
-
+	.form-control{
+		height: auto;
+	}
 </style>
 
 </head>
@@ -100,9 +88,8 @@ body {
 include("topwhite.php");
 ?>
 
-		<div id="word">
-				<div class="container">
-					<div class="row content">
+		<div id="word" class="container">
+					<div class="row yunyou-background yunyou-bgblur">
                     
                     <?php 
 			 $sql=mysql_query("select count(*) as total from yourword",$mymember);
@@ -168,7 +155,7 @@ $infoname=mysql_fetch_array($sqlname);
 		                <h4><span class="glyphicon glyphicon-star">&nbsp;&nbsp;</span><?php echo $info['WTITLE'];?></h4>
 		                </div>
 		                <div id="main">
-		                <div align="left" class="form-control has-feedback"><?php echo $info['WMESSAGE'];?><i class="glyphicon glyphicon-comment form-control-feedback"></i></div>
+		                <div align="left" class="form-control has-feedback"><?php echo $info['WMESSAGE'];?></div>
 						<div align="right" style="padding-top: 10px;"><a href="deleteyourword.php?WID=<?php echo $info['WID'];?>" onclick="return confirm('确定要删除这条留言吗？')"><?php if($_SESSION['MM_Username']==$info['ID']) echo "删除";?> </a>
 		                &nbsp;
 						<?php echo $info['WTIME'];?>
@@ -230,13 +217,13 @@ $infoname=mysql_fetch_array($sqlname);
 								<h3>幻星科幻协会</h3>
                                 <br>
 								<ul class="text-left">
-									<li><i class="glyphicon glyphicon-map-marker"></i>&nbsp;上海·浦东新区·临港新城·上海海事大学·中远图书馆</li>
+									<li><a href="http://j.map.baidu.com/faAbj" target="_blank"><i class="glyphicon glyphicon-map-marker"></i></a>&nbsp;上海·浦东新区·临港新城·上海海事大学·中远图书馆</li>
                                     <br>
-									<li><i class="glyphicon glyphicon-paperclip"></i>&nbsp;QQ群：182332107</li>
+									<li><a href="https://jq.qq.com/?_wv=1027&k=44A8rto" target="_blank"><i class="glyphicon glyphicon-paperclip"></i></a>&nbsp;QQ群：182332107</li>
                                     <br>
-									<li><i class="glyphicon glyphicon-earphone"></i>&nbsp;13917995827</li>
+									<li><a href="tel:13917995827"><i class="glyphicon glyphicon-earphone"></i></a>&nbsp;13917995827</li>
 									<br>
-                                    <li><i class="glyphicon glyphicon-envelope"></i>&nbsp;smuhxxh@163.com</li>
+                                    <li><a href="mailto:smuhxxh@163.com"><i class="glyphicon glyphicon-envelope"></i></a>&nbsp;smuhxxh@163.com</li>
 								</ul>
 							</div>
 						</div>
@@ -265,7 +252,6 @@ $infoname=mysql_fetch_array($sqlname);
 								</form>
 						</div>
 						</div>
-					</div>
 			</div>
 
 <?php

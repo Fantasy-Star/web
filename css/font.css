@@ -18,7 +18,6 @@ a.a2:link,a.a2:visited{color:#fff; text-decoration:none;}
 body {
 	font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
 	background-color: #000000;
-	background-image: url(image/back.jpg);
 	background-attachment: fixed;
 	background-clip: border-box;
 	background-origin: border-box;
@@ -215,7 +214,4 @@ width: 1000px;
 	-webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
 	box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
 
-}
-hr{
-	opacity:0.1;
 }

@@ -115,6 +115,8 @@ $totalRows_upuser = mysql_num_rows($upuser);
 <html>
 <head>
 <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>幻想者-个人资料</title>
 <?php
   include("headlink.php");
@@ -140,53 +142,11 @@ var pass1=document.getElementById('PASSWORD1');
 pass.value="";
 pass1.value="";
 return false; 
-
-
 } 
 return true; 
 }
  </script> 
-<style type="text/css">
-body {
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	text-align: center;
-	font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";	
-	margin:0;
-  color: #ffffff;
-}
 
-#head {
-	margin: auto;
-	width: 480px;
-	height: 150px;
-	filter: drop-shadow(2px 2px 20px rgba(0,0,0,.5));
-}
-
- 
-
-.flip-container, .front, .back {
-	width: 150px;
-	height: 150px;
-	position:relative;
-	top:0px;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-
-
-
-</style>
 </head>
 
 <body>
@@ -195,7 +155,7 @@ body {
 include("topwhite.php");
 ?>
 
-<header id="head" style="">
+<!-- <header id="head" style="">
   <figure style="float:left">
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper"> <a href="http://weibo.com/u/3784345967?from=myfollow_all&is_all=1#_rnd1475328154475" target="_blank">
@@ -206,8 +166,11 @@ include("topwhite.php");
   </figure>
   <div id="huanxiangzhe" style="float: right; height: 150px; "> <img class="titlehead" src="image/userinfo.png" width="218" height="28" alt=""/> </div>
   <input name="authority" type="hidden" id="authority" value="0">
-</header>
-<hr width="1000">
+</header> -->
+<div>
+  <h1>幻想者资料<small></small></h1>
+  <hr>
+</div>
 
 <div class="container">
 <div class="yunyou-bgblur yunyou-background yunyou-panel col-md-12">

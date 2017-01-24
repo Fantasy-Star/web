@@ -40,28 +40,44 @@ if(!isset($_SESSION['MM_Username']))
  {
  header("Location:".$fromurl); exit;
  }
+
+ mysql_select_db($database_mymember, $mymember);
+  $sqlborrow=mysql_query("select count(*) as total from borrow where ID='".$_SESSION['MM_Username']."'",$mymember);
+  $infoborrow=mysql_fetch_array($sqlborrow);
+  $totalborrow= $infoborrow['total'];
  ?>
  
  
  <link rel="shortcut icon" type="image/x-icon" href="logo.ico" media="screen" />
 <link rel="Bookmark" href="logo.ico" >
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgba(0,0,0,0.5);">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgba(0,0,0,0.7);"><!-- navbar-fixed-top -->
   <div class="container-fluid"> 
 
     <div class="navbar-header ">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="userupdate.php"><span> 欢迎你,幻想者<?php echo $_SESSION['MM_Username']; ?>号。 </span></a>
 
-      </div>
+      <a class="navbar-brand dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" title="个人中心">
+      <span> 欢迎你,幻想者<?php echo $_SESSION['MM_Username']; ?>号。<span class="caret"></span></span>
+      </a>
+      <ul class="dropdown-menu" role="menu" style="font-size: large;">
+            <li><a href="userupdate.php"><span class="glyphicon glyphicon-user"></span>&nbsp;个人信息</a></li>
+            <li><a href="borrowcondition.php"><span class="glyphicon glyphicon-bookmark"></span>&nbsp;借阅情况
+            <?php if($totalborrow!=0){ ?>
+            <span class="badge"><?php echo $totalborrow;?></span>
+            <?php } ?>
+            </a></li>   
+            <li><a href="mycomment.php"><span class="glyphicon glyphicon-pencil"></span>&nbsp;我的评论</a></li>
+            <li><a href="myword.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;我的留言</a></li>
+            <li class="divider"></li>
+            <li><a href="<?php echo $logoutAction ?>"><span class="glyphicon glyphicon-off"></span>&nbsp;注销账号</a></li>
+          </ul>
+
+    </div>
 
     <div class="collapse navbar-collapse" id="defaultNavbar1"  style="font-size:large;">
       <ul class="nav navbar-nav navbar-right">
        <?php
-mysql_select_db($database_mymember, $mymember);
-  $sqlborrow=mysql_query("select count(*) as total from borrow where ID='".$_SESSION['MM_Username']."'",$mymember);
-  $infoborrow=mysql_fetch_array($sqlborrow);
-  $totalborrow= $infoborrow['total'];
 
     if(isset($_SESSION['MM_Username'])){
       ?>

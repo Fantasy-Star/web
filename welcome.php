@@ -30,7 +30,9 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $_SESSION['webname']; ?>-欢迎来到幻想者的世界！</title>
 <?php $fromurl="index.php";
  if( $_SERVER['HTTP_REFERER'] == "" )

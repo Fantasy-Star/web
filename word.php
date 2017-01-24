@@ -62,7 +62,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "yourword")) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>幻星科幻协会-留言</title>
+<title><?php echo $_SESSION['webname'];?>-留言</title>
 
 
 
@@ -86,28 +86,18 @@ body {
 	color:rgba(255,255,255,1.00);
   padding-top: 60px;
 }
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar5.png);
-	mix-blend-mode: hard-light;
-}
-
-
 
 </style>
 
 </head>
 
 <body onload="ready();">
+<div>
+  <h1>留言板<small></small></h1>
+  <hr>
+</div>
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
 
 		<div id="word">

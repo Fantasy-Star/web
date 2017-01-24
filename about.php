@@ -30,53 +30,21 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <html>
 <head>
 <meta charset="utf-8">
-<title>欢迎来到幻想者的世界！</title>
+<title><?php echo $_SESSION['webname'];?>-关于</title>
 
 <?php
   include 'headlink.php';
   ?>
-
-<style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-	color:rgba(255,255,255,1.00);
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar6.png);
-	mix-blend-mode: hard-light;
-}
-
-
-
-
-</style>
-
 </head>
 
 <body onLoad="ready()">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
-
+<div>
+  <h1>关于我们<small></small></h1>
+  <hr>
+</div>
 <div id="myCarousel" class="carousel slide content">
 
 	<!-- 轮播（Carousel）项目 -->

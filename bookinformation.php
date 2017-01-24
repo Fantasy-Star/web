@@ -64,7 +64,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "bookcomment")) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>幻星科幻协会-藏书</title>
+<title><?php echo $_SESSION['webname'];?>-藏书</title>
 
 
 <?php
@@ -83,56 +83,27 @@ $(document).ready(function()
 });
 </script>
 
-<style type="text/css">
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar3.png);
-	mix-blend-mode: hard-light;
-}
-
-#content {
-}
-#content #maincontent {
-	
-}
-
-</style>
 
 </head>
 
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
-
+  <?php
+         mysql_select_db($database_mymember, $mymember);
+         $FSBN=$_GET['FSBN'];
+       $sql=mysql_query("select * from book where FSBN='".$FSBN."'",$mymember);
+       $info=mysql_fetch_array($sql);
+       
+       ?>
+<div>
+  <h1>《<?php echo $info['FSBOOK'];?>》<small></small></h1>
+  <hr>
+</div>
 <div id="content">
   <div id="maincontent">
-  <?php
-		     mysql_select_db($database_mymember, $mymember);
-		     $FSBN=$_GET['FSBN'];
-			 $sql=mysql_query("select * from book where FSBN='".$FSBN."'",$mymember);
-			 $info=mysql_fetch_array($sql);
-		   
-		   ?>
+
   <table width="900" border="1" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td height="50" colspan="10" 
@@ -199,7 +170,7 @@ include("navigation.php");
           <td>
           <?php
           $checkorder=mysql_query("select * from orderbook where FSBN='".$FSBN."' and ID='".$_SESSION['MM_Username']."'",$mymember);
-			 if(mysql_fetch_array($checkorder))
+			 if(@mysql_fetch_array($checkorder))
 			 {
 			 ?>
           <div align="center"><a href="deleteorder.php?FSBN=<?php echo $info['FSBN'];?>". onclick="return confirm('你确定要撤销预约吗？')"><input type="image"  src="image/drawback.png"></a></div>   

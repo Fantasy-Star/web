@@ -2,6 +2,7 @@
 //initialize the session
 if (!isset($_SESSION)) {
   session_start();
+  $_SESSION['webname'] = "幻星科幻协会";
 }
 
 // ** Logout the current user. **
@@ -30,7 +31,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <html>
 <head>
 <meta charset="utf-8">
-<title>欢迎来到幻想者的世界！</title>
+<title><?php echo $_SESSION['webname']; ?>-欢迎来到幻想者的世界！</title>
 <?php $fromurl="index.php";
  if( $_SERVER['HTTP_REFERER'] == "" )
  {
@@ -43,40 +44,6 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   ?>
 
 <style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-  color:#fff;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar1.png);
-	mix-blend-mode: hard-light;
-}
-
-#content {
-}
-#content #maincontent {
-
-}
-
-
 .videostyle
 {
 	opacity: 0.9;
@@ -88,8 +55,11 @@ body {
 	background-color: rgba(0,0,0,.5);
 	color:#000000;
 }
-
-
+.popover{
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+}
+.popover.bottom > .arrow:after { border-bottom-color: rgba(0,0,0,0.6);}
 </style>
 
 </head>
@@ -97,21 +67,28 @@ body {
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
-
-<div id="content" class="container">
-  <h1 class="yunyou-bgblur yunyou-background">还没想好放什么<br>=w=</h1>
-  <div id="maincontent"  class="embed-responsive embed-responsive-16by9 hidden-xs">
-    <video class="videostyle yunyou-bgblur " controls="controls">
-      <!--<source src="video/yunyousection1.mp4">-->
-    </video>
-  </div>
+<div>
+  <h1>=w=这里是首页<small>|还没想好放什么</small></h1>
+  <hr>
 </div>
+<div class="jumbotron yunyou-bgblur yunyou-background">
+  <h1>幻星科幻协会</h1>
+  <p>玩玩线条吧~</p>
+  <p><button type="button" class="btn btn-primary btn-lg" href="#" role="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="(￣^￣゜)都说了没用了啦">点我也没用</button></p>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
+
 <?php
  include("copyfoot.php");
 ?>
 
+<script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 
 </body>
 </html>

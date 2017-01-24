@@ -3,53 +3,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>幻星科幻协会-资源</title>
+<title><?php echo $_SESSION['webname'];?>-资源</title>
 
 
 <?php
   include 'headlink.php';
   ?>
 
-<style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-	color:rgba(255,255,255,1.00);
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar4.png);
-	mix-blend-mode: hard-light;
-}
-
-
-
-</style>
-
 </head>
 
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
-?>
 
+?>
+<div>
+  <h1>资源<small></small></h1>
+  <hr>
+</div>
 		<div id="source">
 					<div class="row content">
 

@@ -94,37 +94,6 @@ if($rs['status']<=2)
 
 <style type="text/css">
 
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar3.png);
-	mix-blend-mode: hard-light;
-}
-
-#content {
-}
-#content #maincontent {
-	
-}
-
 .bookstyle{
    width:!important;
    color:#FFFFFF;
@@ -143,9 +112,11 @@ body {
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
-
+<div>
+  <h1>图书信息<small>|编辑</small></h1>
+  <hr>
+</div>
 <div id="content">
   <div id="maincontent">
   <?php

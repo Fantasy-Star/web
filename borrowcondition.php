@@ -77,7 +77,7 @@ $member_blimit = mysql_fetch_array($booklimit);
 <?php
 mysql_select_db($database_mymember, $mymember);
 $sql=mysql_query("select count(*) as total from orderbook where ID='".$_SESSION['MM_Username']."'",$mymember);
-	$info=mysql_fetch_array($sql);
+	@$info=mysql_fetch_array($sql);
 	$total = $info['total'];
   $sqlborrow=mysql_query("select count(*) as total from borrow where ID='".$_SESSION['MM_Username']."'",$mymember);
   $infoborrow=mysql_fetch_array($sqlborrow);

@@ -51,7 +51,7 @@ if(!isset($_SESSION['MM_Username']))
 
     <div class="navbar-header ">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="#"><span> 欢迎你,幻想者<?php echo $_SESSION['MM_Username']; ?>号。 </span></a>
+      <a class="navbar-brand" href="userupdate.php"><span> 欢迎你,幻想者<?php echo $_SESSION['MM_Username']; ?>号。 </span></a>
 
       </div>
 
@@ -68,6 +68,9 @@ mysql_select_db($database_mymember, $mymember);
         <li id="welcome"><a href="welcome.php" title="首页"><span class="glyphicon glyphicon-home" title="主页"></span></a></li>
         <li><a href="member.php">成员</a></li>
         <li><a href="book.php">藏书</a></li>
+        <li><a href="source.php">资源</a></li>
+        <li><a href="word.php">留言</a></li>
+        <li><a href="about.php">关于</a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="个人中心">个人中心<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="font-size: large;">
             <li><a href="userupdate.php"><span class="glyphicon glyphicon-user"></span>&nbsp;个人信息</a></li>

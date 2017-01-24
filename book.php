@@ -15,46 +15,11 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>幻星科幻协会-藏书</title>
+<title><?php echo $_SESSION['webname'];?>-藏书</title>
 
 <?php
 	include("headlink.php");
 	?>
-
-<style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar3.png);
-	mix-blend-mode: hard-light;
-}
-
-#content {
-}
-#content #maincontent {
-	
-}
-
-</style>
 
 <script>
 function turnorder()
@@ -85,9 +50,12 @@ function turnorderscore()
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
 
+<div>
+  <h1>藏书<small></small></h1>
+  <hr>
+</div>
 
 
 <div id="content">

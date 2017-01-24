@@ -107,9 +107,7 @@ body {
 <div class="container">
   <div class="row">
       <div  class="col-md-12"> 
-      <a href="http://weibo.com/u/3784345967?from=myfollow_all&is_all=1#_rnd1475328154475" target="_blank">
-        <div > <img class="img-rounded" src="image/logo.png" alt=""  id="logo"/> </div>
-        </a> 
+        <div ><a href="http://weibo.com/u/3784345967?from=myfollow_all&is_all=1#_rnd1475328154475" target="_blank"><img class="img-rounded" src="image/logo.png" alt=""  id="logo"/></a></div>
 
          <hr >
       </div>

@@ -8,11 +8,11 @@
         <p>Background: <a href="http://www.pixiv.net/member_illust.php?mode=medium&illust_id=40971496" target="_blank">リアルプラネタリウム。 | mocha＠C91【j23b】 [pixiv]</a></p>
         <p>
         <a href="mailto:910426929@qq.com"><span class="glyphicon glyphicon-envelope"></span></a>
-        ·Email：<a href="mailto:910426929@qq.com" target="_blank">910426929@qq.com</a>
+        ·Email：<a href="mailto:910426929@qq.com">910426929@qq.com</a>
         </p>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script color="102,204,255" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>

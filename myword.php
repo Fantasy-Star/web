@@ -8,8 +8,11 @@ if (!isset($_SESSION)) {
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>幻星科幻协会-我的留言</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $_SESSION['webname']; ?>-我的留言</title>
 
 
 
@@ -17,37 +20,6 @@ if (!isset($_SESSION)) {
 include("headlink.php");
   ?>
 
-
-<style type="text/css">
-
-
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-	color:rgba(255,255,255,1.00);
-  padding-top: 60px;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar5.png);
-	mix-blend-mode: hard-light;
-}
-
-
-
-</style>
 
 </head>
 
@@ -58,7 +30,7 @@ include("topwhite.php");
 
 		<div id="word">
 				<div class="container">
-					<div class="row content">
+					<div class="row yunyou-background yunyou-bgblur">
 
 					<h2>我的留言</h2>
                     
@@ -112,7 +84,7 @@ include("topwhite.php");
 		                <?php echo $info['WTITLE'];?></h4>
 		                </div>
 		                <div id="main">
-		                <div align="left" class="form-control has-feedback"><?php echo $info['WMESSAGE'];?><i class="glyphicon glyphicon-comment form-control-feedback"></i></div>
+		                <div align="left" class="form-control has-feedback" style="height:auto;"><?php echo $info['WMESSAGE'];?><i class="glyphicon glyphicon-comment form-control-feedback"></i></div>
 						<div align="right" style="padding-top: 10px;"><a href="deleteyourword.php?WID=<?php echo $info['WID'];?>" onclick="return confirm('确定要删除这条留言吗？')"><?php if($_SESSION['MM_Username']==$info['ID']) echo "删除";?> </a>
 		                &nbsp;
 						<?php echo $info['WTIME'];?>

@@ -14,7 +14,9 @@ $rs = mysql_fetch_array($result);
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $_SESSION['webname'];?>-藏书</title>
 
 <?php
@@ -59,8 +61,8 @@ include("topwhite.php");
 
 
 <div id="content">
-  <div id="maincontent">
-  <table width="980"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <div id="maincontent" class="container">
+  <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center" valign="top" >      
       <?php
@@ -102,28 +104,32 @@ include("topwhite.php");
 	   ?>
        
 
-      <table id="tb1" width border="1px"  bordercolor="#FFFFFF" align="center" cellpadding="0" cellspacing="0">
-      
+
       
       
   <!-- LAST XIUGAI -->    
       
-      <tr>
+
       
-      <form action="book.php" method="get" name="searchbook" id="searchbook" class="form-group">
-      <div class=" form-inline" style="margin-top: 15px;margin-bottom: 15px;">
+      <form action="book.php" method="get" name="searchbook" id="searchbook" class="form-inline" style="margin-top: 15px;margin-bottom: 15px;">
+
+
+      	<div class="form-group">
               <input name="keyword1" type="search" class="form-control"
               value="<?php if(isset($_SESSION['keyword1'])){echo $_SESSION['keyword1'];}?>"/>
-              &nbsp;
-    <label class="btn btn-inverse-hover" style="font-size: medium;">豆瓣评分</label>
-   <select name="fuhao" class="form-control" form="searchbook" title="<>">
-        <!--<option value=">="><></option>-->
-        <option value=">=" <?php if (!(strcmp($_SESSION['fuhao'],'>='))) {echo "selected=\"selected\"";} ?>> ≥ </option>
-        <option value="<=" <?php if (!(strcmp($_SESSION['fuhao'],'<='))) {echo "selected=\"selected\"";} ?>> ≤ </option>
-        <option value="=" <?php if (!(strcmp($_SESSION['fuhao'],'='))) {echo "selected=\"selected\"";} ?>> = </option>
-      </select>
-      
-      <input type="search" class="form-control" name="score"  style="width:60px;" value="<?php if(isset($_SESSION['score'])){echo $_SESSION['score'];}?>"/>
+		</div>
+
+		<div class="form-group form-inline">
+		    <label class="btn btn-inverse-hover" style="font-size: medium;">豆瓣评分</label>
+		    <select name="fuhao" class="form-control" form="searchbook" title="<>" style="width:60px;">
+		        <!--<option value=">="><></option>-->
+		        <option value=">=" <?php if (!(strcmp($_SESSION['fuhao'],'>='))) {echo "selected=\"selected\"";} ?>> ≥ </option>
+		        <option value="<=" <?php if (!(strcmp($_SESSION['fuhao'],'<='))) {echo "selected=\"selected\"";} ?>> ≤ </option>
+		        <option value="=" <?php if (!(strcmp($_SESSION['fuhao'],'='))) {echo "selected=\"selected\"";} ?>> = </option>
+		      </select>
+		      
+		      <input type="search" class="form-control" name="score"  style="width:60px;" value="<?php if(isset($_SESSION['score'])){echo $_SESSION['score'];}?>"/>
+		</div>
 
       <button formmethod="GET"  class="btn btn-inverse" onclick="form.submit()">搜索</button>
       <button type="button"  class="btn btn-inverse" onclick="location.href='exportbook.php'">导出表格</button>
@@ -131,27 +137,28 @@ include("topwhite.php");
       <?php 
 		if($rs['status']>=2){
 			?> 
-<button class="btn btn-inverse" type="button" onclick="location.href='newbook.php'">添加新书</button>   
+	<button class="btn btn-inverse" type="button" onclick="location.href='newbook.php'">添加新书</button>   
       <a class="btn btn-inverse" onclick="location.href='orderborrow.php'">借阅情况</a>
       <?php
 		}
 		?>
-		</div>
-           </form>
-           
-      </tr>
+
+        </form>
+
+      <table id="tb1" width="100%" border="1px"  bordercolor="#FFFFFF" align="center" cellpadding="0" cellspacing="0">
+      
         <tr bgcolor="#111111">
-          <th width="55" height="20"><div align="center"><form action="book.php" method="post" name="FSBN" id="FSBN">
+          <th  height="20"><div align="center"><form action="book.php" method="post" name="FSBN" id="FSBN"><!-- width="55" -->
           <input type="hidden" id="ziduan" name="ziduan" value="FSBN"/>
           <input type="hidden" id="turn" name="turn" value="<?php echo $_SESSION['turn'];?>"/>
           </form>        
           <div align="center"><a class="a2" href="javascript:document.FSBN.submit();" onClick="turnorder()">
 社团书号</a></div></div></th>
-          <th width="105"><div align="center">书名</div></th>
-          <th width="130"><div align="center">ISBN</div></th> 
-          <th width="100"><div align="center">作者</div></th>
-          <th width="30"><div align="center">数量</div></th>
-          <th width="50"><div align="center">
+          <th ><div align="center">书名</div></th><!-- width="105" -->
+          <th ><div align="center">ISBN</div></th> <!-- width="130" -->
+          <th ><div align="center">作者</div></th><!-- width="100" -->
+          <th ><div align="center">数量</div></th><!-- width="30" -->
+          <th ><div align="center"><!-- width="50" -->
           <form action="book.php" method="post" name="price" id="price">
           <input type="hidden" id="ziduan" name="ziduan" value="PRICE"/>
           <input type="hidden" id="turnprice" name="turn" value="<?php echo $_SESSION['turn'];?>"/>
@@ -159,10 +166,10 @@ include("topwhite.php");
           <div align="center"><a class="a2" href="javascript:document.price.submit();" onClick="turnorderprice()">
 价格</a></div>
 </div></th>
-          <th width="120"><div align="center">出版社</div></th>
-          <th width="80"><div align="center">出版日期</div></th>
-          <th width="50"><div align="center">状态</div></th>
-          <th width="50"><div align="center">
+          <th ><div align="center">出版社</div></th><!-- width="120" -->
+          <th ><div align="center">出版日期</div></th><!-- width="80" -->
+          <th ><div align="center">状态</div></th><!-- width="50" -->
+          <th ><div align="center"><!-- width="50" -->
           <form action="book.php" method="post" name="bscore" id="bscore">
           <input type="hidden" id="ziduan" name="ziduan" value="BSCORE"/>
           <input type="hidden" id="turnscore" name="turn" value="<?php echo $_SESSION['turn'];?>"/>
@@ -171,8 +178,8 @@ include("topwhite.php");
 豆瓣评分</a></div>
 </div>
 </th>
-          <th width="50"><div align="center">保管人</div></th>
-          <th width="110"><div align="center">备注</div></th>
+          <th ><div align="center">保管人</div></th><!-- width="50" -->
+          <th ><div align="center">备注</div></th><!-- width="110" -->
         <?php 
 		if($rs['status']>=2){
 			?> 

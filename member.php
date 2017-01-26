@@ -13,7 +13,9 @@ $rs = mysql_fetch_array($result);
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $_SESSION['webname'];?>-成员</title>
 
 
@@ -50,8 +52,8 @@ include("topwhite.php");
   <hr>
 </div>
 <div id="content">
-  <div id="maincontent">
-     <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <div id="maincontent" class="container">
+     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center"  >      
       <?php
@@ -101,7 +103,7 @@ include("topwhite.php");
 	   
 	   ?>
        
-      <table width="950" border="1px" class="yunyou-bgblur" style="background-color: rgba(0,0,0,0.1);" bordercolor="#FFFFFF" align="center" cellpadding="0" cellspacing="0">
+      <table width="100%" border="1px" class="yunyou-bgblur" style="background-color: rgba(0,0,0,0.1);" bordercolor="#FFFFFF" align="center" cellpadding="0" cellspacing="0">
       <tr>
             <td  colspan="12" align="center">
             <br>

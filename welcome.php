@@ -77,20 +77,51 @@ include("topwhite.php");
 <div class="jumbotron yunyou-bgblur yunyou-background">
   <h1>幻星科幻协会</h1>
   <p>玩玩线条吧~</p>
-  <p><button type="button" class="btn btn-primary btn-lg" href="#" role="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="(￣^￣゜)都说了没用了啦">点我也没用</button></p>
+  <p><button id="heiya" type="button" class="btn btn-primary btn-lg" href="#" role="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="(￣^￣゜)嘿呀">点我也没用</button></p>
+  <div id="smallgame" style="display: none;">
+  <iframe src="HTML5-Asteroids/index.html" frameborder="0" width="800" height="560"></iframe>
+  </div>
 </div>
+
+
 
 <script type="text/javascript">
   $(function () {
   $('[data-toggle="popover"]').popover()
 })
+  function show(){
+document.getElementById("smallgame").style.display="";
+  }
+</script>
+
+<script type="text/javascript">
+$("#heiya").click(function(){
+
+<!-- 
+//平台、设备和操作系统
+var system ={
+win : false,
+mac : false,
+xll : false
+};
+//检测平台
+var p = navigator.platform;
+system.win = p.indexOf("Win") == 0;
+system.mac = p.indexOf("Mac") == 0;
+system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+//跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+if(system.win||system.mac||system.xll){
+ show();
+}else{
+//手机
+}
+-->
+        });
 </script>
 
 <?php
  include("copyfoot.php");
 ?>
-
-<script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 
 </body>
 </html>

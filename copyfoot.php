@@ -15,7 +15,7 @@
   </div>
 </footer>
 
-<script color="102,204,255" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script color="110,220,255" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 <!--推送-->
 <script>
 (function(){

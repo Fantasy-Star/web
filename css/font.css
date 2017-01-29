@@ -27,10 +27,6 @@ body {
 	text-align:center;
 }
 
-.foot {
-	width: 1000px;
-	margin: auto;
-}
 
 TD,TH {
 	FONT-SIZE: 12px;
@@ -121,7 +117,7 @@ table{
 	-moz-background-clip: padding;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.4);
 	-moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
 	-webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
 	box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
@@ -141,7 +137,7 @@ table A:hover {
 
 textarea{
     background: rgba(0, 0, 0, 0.4) scroll 16px 16px; 
-	width:800px;
+    width: 100%;
     height: 100px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -150,10 +146,8 @@ textarea{
     -webkit-background-clip: padding-box;
     background-clip: padding-box; 
     display:block;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size:small;
     color:#fff;
-
+	padding: 5px;
     overflow:auto;
    
 }
@@ -183,20 +177,7 @@ textarea{
 	margin-top: 75px;
 	opacity: 0.9;
 }
-.bg {
-	background-color: #000000;
-	opacity: 0.6;
-	-webkit-box-shadow: 0px 0px 40px;
-	box-shadow: 0px 0px 40px;
-	-webkit-filter: blur(10px);
-	-moz-filter: blur(10px);
-	-ms-filter: blur(10px);
-	filter: blur(10px);
-	width: 900px;
-	height: 440px;
-	margin: auto;/*border-radius:5%;
-    box-shadow:0 0 30px 10px rgba(255,255,255,.7) inset;*/
-}
+
 .content {
 
 	position: relative;

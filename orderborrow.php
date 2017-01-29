@@ -5,44 +5,15 @@ session_start();
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>幻想者-借阅情况</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $_SESSION['webname'];?>-借阅情况</title>
 
 <?php
   include("headlink.php");
   ?>
 
-<style>
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-}
-#head {
-	margin: auto;
-	width: 480px;
-	height: 150px;
-	filter: drop-shadow(2px 2px 20px rgba(0,0,0,.5));
-}
-.flip-container, .front, .back {
-	width: 150px;
-	height: 150px;
-	position:relative;
-	top:0px;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-</style>
 
 </head>
 <body>
@@ -50,7 +21,7 @@ body {
 include("topwhite.php");
 ?>
 
-<header id="head" style="">
+<!-- <header id="head" style="">
   <figure style="float:left">
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper"> <a href="http://weibo.com/u/3784345967?from=myfollow_all&is_all=1#_rnd1475328154475" target="_blank">
@@ -61,7 +32,11 @@ include("topwhite.php");
   </figure>
   <div id="huanxiangzhe" style="height: 150px; margin-left:20px;"><img class="titlehead" src="image/borrowinfo.png" height="28" alt=""/> </div>
 </header>
-<hr>
+<hr> -->
+<div>
+  <h1>借阅情况<small></small></h1>
+  <hr>
+</div>
 <div class="content">
 <?php
 mysql_select_db($database_mymember, $mymember);
@@ -75,7 +50,7 @@ $sqlborrow=mysql_query("select count(*) as total from borrow",$mymember);
 <h3 style="color:#FFFFFF;">
 图书管理员界面
 </h3>
-<table width="800">
+<table width="100%">
     <tr bgcolor="#111111">
       <th height="20"><div align="center">预约单号</div></th>
       <th ><div align="center">预约者学号</div></th>
@@ -118,7 +93,8 @@ $sqlborrow=mysql_query("select count(*) as total from borrow",$mymember);
     </tr>
 <hr>
 </table>
-<table width="800">
+<hr>
+<table width="100%">
 <tr bgcolor="#111111">
       <th height="20"><div align="center">已借图书</div></th>
       <th ><div align="center">社团书号</div></th>
@@ -141,7 +117,7 @@ $sqlborrow=mysql_query("select count(*) as total from borrow",$mymember);
       $infobook2=mysql_fetch_array($sqlbook2);
       ?>
 	  <a href="bookinformation.php?FSBN=<?php echo $info1['FSBN'];?>"><?php echo $infobook2['FSBOOK'];?></a></div></td>
-      <td ><div align="center"><?php echo $borrowbook['FSBN'];?></a></div></td>
+      <td ><div align="center"><?php echo $borrowbook['FSBN'];?></div></td>
       <td ><div align="center">
 	  <?php 
 	  $sqlname=mysql_query("select NAME from member where ID='".$borrowbook['ID']."'",$mymember);
@@ -163,16 +139,9 @@ $sqlborrow=mysql_query("select count(*) as total from borrow",$mymember);
      <div align="center">共有&nbsp;<?php echo $totalborrow;?>&nbsp;条借阅记录</div>
      </td>
     </tr>
-
-<tr>
-<td colspan="8" align="center">
-<div align="center"><a href="#" onClick="JavaScript:history.back(1);"><img src="image/back.png"  alt=""/></a></div>
-</td>
-</tr>
-
 </table>
-
-
+  <hr>
+  <div align="center"><a href="#" onClick="JavaScript:history.back(1);"><button class="btn btn-inverse">返回</button></a></div>
 </div>
 <?php
  include("copyfoot.php");

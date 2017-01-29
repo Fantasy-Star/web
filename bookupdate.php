@@ -85,7 +85,9 @@ if($rs['status']<=2)
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>幻星科幻协会-修改信息</title>
 
 <?php
@@ -117,95 +119,121 @@ include("topwhite.php");
   <h1>图书信息<small>|编辑</small></h1>
   <hr>
 </div>
-<div id="content">
+<div id="content" class="container">
   <div id="maincontent">
   <?php
 		     mysql_select_db($database_mymember, $mymember);
 		     $id=$_GET['id'];
 			 $sql=mysql_query("select * from book where FSBN='".$id."'",$mymember);
 			 $info=mysql_fetch_array($sql);
-
-		   
 		   ?>
-           <form action="<?php echo $editFormAction; ?>" name="thisform" method="POST">
-  <table width="900" border="1" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="50" colspan="10" 
-          style="font-size:large;font-family:'幼圆', '楷体', '隶书', '华文隶书', '黑体', '微软雅黑', '华文行楷';font-weight:bold;">
-          <div align="center">书名：<input name="FSBOOK" type="text" required="required" class="bookstyle"
-         value="<?php echo $info['FSBOOK'];?>"></div></td>
-        </tr>
-        <tr>
-          <td width="100"><div align="RIGHT">社团书号：</div></td>
-          <td width="80" ><div align="CENTER"><input name="FSBN" type="text" class="smallstyle" value="<?php echo $info['FSBN'];?>"  readonly></div></td>
-          <td width="80" ><div align="center">数量：</div></td>
-          <td width="50" ><div align="CENTER"><input name="BNUM" type="text" class="smallstyle" value="<?php echo $info['BNUM'];?>"></div></td>
-          <td width="80" ><div align="center">价格：</div></td>
-          <td width="80" ><div align="CENTER"><input name="PRICE" type="text" class="smallstyle" value="<?php echo $info['PRICE'];?>"></div></td>
-          <td width="90" ><div align="center">作者：</div></td>
-          <td width="150" ><div align="CENTER"><input name="AUTHOR" type="text" class="smallstyle" value="<?php echo $info['AUTHOR'];?>"></div></td>
-          <td width="90" ><div align="center">ISBN：</div></td>
-          <td width="180" ><div align="left"><input name="ISBN" type="text" class="smallstyle" value="<?php echo $info['ISBN'];?>"></div></td>
-        </tr>
-        <tr>
-          <td width ><div align="RIGHT">保管者：</div></td>
-          <td width ><div align="CENTER"><input name="STORAGE" type="text" class="smallstyle" value="<?php echo $info['STORAGE'];?>"></div></td>
-          <td width ><div >被借次数：</div></td>
-          <td width ><div align="CENTER"><input name="BORNUM" type="text" class="smallstyle" value="<?php echo $info['BORNUM'];?>"></div></td>
-          <td width ><div align="center">剩余数量：</div></td>
-          <td width ><div align="CENTER"><input name="ISBOR" type="text" class="smallstyle" value="<?php echo $info['ISBOR'];?>"></div></td>   
-          <td width><div >出版社：</div></td>
-          <td width><div align="center"><input name="PUB" type="text" class="smallstyle" value="<?php echo $info['PUB'];?>"></div></td>
-          <td width><div align="center">出版日期：</div></td>
-          <td width ><div align="left"><input name="BDATE" type="text" class="smallstyle" value="<?php echo $info['BDATE'];?>"></div></td>
-          
-          
-        </tr>
-        <tr>
-          <td width ><div align="RIGHT">豆瓣评分：</div></td>
-          <td width ><div align="CENTER"><input name="BSCORE" type="text" class="smallstyle" value="<?php 
-		  if($info['BSCORE']==0)echo "无";
-		  else{
-		  echo $info['BSCORE'];}
-		  ?>">
-		  </div></td>
-          <td width><div align="center">备注：</div></td>
-          <td colspan="7"><div align="left"><input name="NOTE" type="text" class="smallstyle" value="<?php echo $info['NOTE'];?>"></div></td>
-        </tr>
-        <tr>
-          <td height="45" colspan="10">
-          <div align="center" style="font-size:large;font-family:'幼圆', '楷体', '隶书', '华文隶书', '黑体', '微软雅黑', '华文行楷';font-weight:bold;">
-          简介</div></td>
-        </tr>
-        <tr >
-          <td width="500" colspan="10" style="padding-left:40px;padding-right:40px;"><div align="left">
-		  <textarea name="INFO" class="textarea"><?php echo $info['INFO'];?></textarea></div></td>
-        </tr>
-        <tr>
-          <td height="66" colspan="10" align="center">
-          
-          <table width="240px" style="
-	border: 1px solid rgba(0,0,0,.2);
-	background-color: rgba(0,0,0,0);
-	-moz-box-shadow: 0 0 0px 0px rgba(0,0,0,0);
-	-webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,0);
-	box-shadow: 0 0 0px 0px rgba(0,0,0,0);">
-          <tr>
+  <form class="form-horizontal yunyou-background yunyou-bgblur" action="<?php echo $editFormAction; ?>" name="thisform" method="POST"  style="padding: 30px;">
+  <div class="form-inline">
+    <div class="form-group">
+      <label >书名：</label>
+      <input name="FSBOOK" type="text" required="required" class="form-control" value="<?php echo $info['FSBOOK'];?>">
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div for="FSBN" class="col-md-6 control-label">社团书号：</div>
+      <div class="col-md-6">
+      <input name="FSBN" id="FSBN" type="text" class="form-control" readonly style="background-color: transparent;" value="<?php echo $info['FSBN'];?>">
+      </div>
+    </div>
+    <div class="col-md-3 form-group ">
+      <div for="BNUM" class="col-md-6 control-label">数量：</div>
+      <div class="col-md-6 input-group">
+      <input id="BNUM" name="BNUM" type="number" min="0" class="form-control" required="required" value="<?php echo $info['BNUM'];?>">
+      <span class="input-group-addon">本</span>
+      </div>
+    </div>
+    <div class=" col-md-3 form-group" for="PRICE">
+      <div class="col-md-6 control-label">价格：</div>
+      <div class="col-md-6 input-group">
+      <input name="PRICE" id="PRICE" class="form-control" value="<?php echo $info['PRICE'];?>">
+      <span class="input-group-addon">￥</span>
+      </div>
+    </div>
+    <div class="col-md-4 form-group ">
+      <div class="col-md-4 control-label">作者：</div>
+      <div class="col-md-8">
+      <input name="AUTHOR" type="text" class="form-control" value="<?php echo $info['AUTHOR'];?>">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">保管者：</div>
+      <div class="col-md-6"><input name="STORAGE" type="text" class="form-control" value="<?php echo $info['STORAGE'];?>"></div>
+    </div>
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">剩余数量：</div>
+      <div class="col-md-6 input-group">
+      <input id="ISBOR" name="ISBOR" type="number" min="0" class="form-control" value="<?php echo $info['ISBOR'];?>">
+      <span class="input-group-addon">本</span>
+      </div>
+    </div>
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">被借次数：</div>
+      <div class="col-md-6 input-group">
+      <input name="BORNUM" type="number" min="0" class="form-control" value="<?php echo $info['BORNUM'];?>">
+      <span class="input-group-addon">次</span>
+      </div>
+    </div>
+    <div class=" col-md-4 form-group">
+      <div class="col-md-4 control-label">ISBN：</div>
+      <div class="col-md-8">
+      <input name="ISBN" type="text" class="form-control" value="<?php echo $info['ISBN'];?>">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">豆瓣评分：</div>
+      <div class="col-md-6"><input name="BSCORE" type="text" class="form-control" value="<?php 
+      if($info['BSCORE']==0)echo "无";
+      else{
+      echo $info['BSCORE'];}
+      ?>"></div>
+    </div>
+    <div class="col-md-5 form-group">
+      <div class="control-label col-md-4">出版社：</div>
+      <div class="col-md-8"><input name="PUB" type="text" class="form-control" value="<?php echo $info['PUB'];?>"></div>
+    </div>
+    <div class="col-md-4 form-group">
+      <div class="control-label col-md-4">出版日期：</div>
+      <div class="col-md-8 input-group"><input name="BDATE" type="date" class="form-control" value="<?php echo $info['BDATE'];?>">
+      <span class="glyphicon glyphicon-calendar input-group-addon "></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="control-label col-md-1">备注：</div>
+    <div class="col-md-11"><input name="NOTE" type="text" class="form-control" value="<?php echo $info['NOTE'];?>"></div>
+  </div>
+  <hr>
+
+    <h3>简介</h3>
+    <div class="form-group"><textarea name="INFO" class="form-control" rows="5"><?php echo $info['INFO'];?></textarea></div>
+
+
+    <div class="form-group">
+      <div class="col-md-4 col-xs-4"><button type="submit" formmethod="post" class="btn btn-inverse" onclick="return confirm('确定要修改吗？')">保存</button></div></td>
           <td >
-          <div align="center"><button type="submit" formmethod="post" class="btn btn-inverse" onclick="return confirm('确定要修改吗？')">保存</button></div></td>
-          <td >
-          <div  align="center"><a href="deletebook.php?FSBN=<?php echo $info['FSBN'];?>"><button type="button" class="btn btn-inverse" onclick="return confirm('确定要删除这本书吗？')">删除</button></a></div></td>
+      <div class="col-md-4 col-xs-4"><a href="deletebook.php?FSBN=<?php echo $info['FSBN'];?>"><button type="button" class="btn btn-inverse" onclick="return confirm('确定要删除这本书吗？')">删除</button></a></div></td>
           <td>
-          <div  align="center"><button type="button" class="btn btn-inverse" onClick="JavaScript:location.href='book.php';">返回</button></div>
-          </td>
-          </tr>
-          </table>
-          
-          </td>
-        </tr>
-</table>
-  <input type="hidden" name="MM_update" value="thisform">
-    </form>
+      <div class="col-md-4 col-xs-4"><button type="button" class="btn btn-inverse" onClick="JavaScript:location.href='book.php';">返回</button></div>
+    </div>
+
+      <input type="hidden" name="MM_update" value="thisform">
+  </form>
+
   </div>
 
 </div>

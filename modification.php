@@ -83,50 +83,26 @@ $row_upuser = mysql_fetch_assoc($upuser);
 <!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>修改成员信息</title>
 <?php
   include("headlink.php");
   ?>
  
-<style type="text/css">
-body {  
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";   
-  background-color: #000000;
-  background-image: url(image/back.jpg);
-  background-attachment: fixed;
-  background-clip: border-box;
-  background-origin: border-box;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0;
-  text-align:center;
-  color: #ffffff;
-}
-#header {
-  width: 1000px;
-  height: 200px;
-  margin: 0 auto;
-  position: relative;
-}
-.blend
-{ 
-    background:url(image/bar2.png);
-  mix-blend-mode: hard-light;
-}
 
-
-</style>
 </head>
 
 <body>
 
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
-
+<div>
+  <h1>修改成员信息<small></small></h1>
+  <hr>
+</div>
 
 <div class="container">
 <div class="yunyou-bgblur yunyou-background yunyou-panel col-md-12">

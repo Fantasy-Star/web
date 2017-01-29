@@ -86,8 +86,10 @@ if($rs['status']<=2)
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>幻星科幻协会-添加新书</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $_SESSION['webname'];?>-添加新书</title>
 <?php
   include("headlink.php");
   ?>
@@ -95,44 +97,8 @@ if($rs['status']<=2)
 <style type="text/css">
 
 
-body {	
-    font-family:"微软雅黑","幼圆", "楷体", "隶书", "华文隶书", "黑体",  "华文行楷";		
-	background-color: #000000;
-	background-image: url(image/back.jpg);
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0;
-	text-align:center;
-}
-#header {
-	width: 1000px;
-	height: 200px;
-	margin: 0 auto;
-	position: relative;
-}
-.blend
-{	
-    background:url(image/bar3.png);
-	mix-blend-mode: hard-light;
-}
-
-#content {
-}
-#content #maincontent {
-	
-}
-
-.bookstyle{
-   width:!important;
-   color:#FFFFFF;
-}
-.smallstyle{
-	color:#FFFFFF;
+.form-control{
 	font-size:small;
-	width:95%;
 	text-align:center;
 }
 
@@ -150,83 +116,115 @@ document.getElementById('ISBOR').value=document.getElementById('BNUM').value;
 <body onload="ready();">
 <?php
 include("topwhite.php");
-include("navigation.php");
 ?>
+<div>
+  <h1>添加新书<small></small></h1>
+  <hr>
+</div>
 
-<div id="content">
+<div id="content" class="container">
   <div id="maincontent">
-           <form action="<?php echo $editFormAction; ?>" name="thisform" method="POST">
-  <table width="900" border="1" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td height="50" colspan="10" 
-          style="font-size:large;font-family:'幼圆', '楷体', '隶书', '华文隶书', '黑体', '微软雅黑', '华文行楷';font-weight:bold;">
-          <div align="center">书名：<input name="FSBOOK" type="text" required="required" class="bookstyle"></div></td>
-        </tr>
-        <tr>
-          <td width="100"><div align="RIGHT">社团书号：</div></td>
-          <td width="80" ><div align="CENTER"><input name="FSBN" type="text" class="smallstyle" value="不用填写"  readonly></div></td>
-          <td width="80" ><div align="center">数量：</div></td>
-          <td width="50" ><div align="CENTER"><input id="BNUM" name="BNUM" type="text" class="smallstyle" required="required" onKeyUp="samenum();"></div></td>
-          <td width="80" ><div align="center">价格：</div></td>
-          <td width="80" ><div align="CENTER"><input name="PRICE" type="text" class="smallstyle" ></div></td>
-          <td width="90" ><div align="center">作者：</div></td>
-          <td width="150" ><div align="CENTER"><input name="AUTHOR" type="text" class="smallstyle" ></div></td>
-          <td width="90" ><div align="center">ISBN：</div></td>
-          <td width="180" ><div align="left"><input name="ISBN" type="text" class="smallstyle" ></div></td>
-        </tr>
-        <tr>
-          <td width ><div align="RIGHT">保管者：</div></td>
-          <td width ><div align="CENTER"><input name="STORAGE" type="text" class="smallstyle" ></div></td>
-          <td width ><div >被借次数：</div></td>
-          <td width ><div align="CENTER"><input name="BORNUM" type="text" class="smallstyle" value="0"></div></td>
-          <td width ><div align="center">剩余数量：</div></td>
-          <td width ><div align="CENTER"><input id="ISBOR" name="ISBOR" type="text" class="smallstyle" ></div></td>   
-          <td width><div >出版社：</div></td>
-          <td width><div align="center"><input name="PUB" type="text" class="smallstyle" ></div></td>
-          <td width><div align="center">出版日期：</div></td>
-          <td width ><div align="left"><input name="BDATE" type="text" class="smallstyle" ></div></td>
-          
-          
-        </tr>
-        <tr>
-          <td width ><div align="RIGHT">豆瓣评分：</div></td>
-          <td width ><div align="CENTER"><input name="BSCORE" type="text" class="smallstyle" >
-		  </div></td>
-          <td width><div align="center">备注：</div></td>
-          <td colspan="7"><div align="left"><input name="NOTE" type="text" class="smallstyle"></div></td>
-        </tr>
-        <tr>
-          <td height="45" colspan="10">
-          <div align="center" style="font-size:large;font-family:'幼圆', '楷体', '隶书', '华文隶书', '黑体', '微软雅黑', '华文行楷';font-weight:bold;">
-          简介</div></td>
-        </tr>
-        <tr >
-          <td width="500" colspan="10" style="padding-left:40px;padding-right:40px;"><div align="left">
-		  <textarea name="INFO" class="textarea"></textarea></div></td>
-        </tr>
-        <tr>
-          <td height="66" colspan="10" align="center">
-          
-          <table width="240px" style="
-	border: 1px solid rgba(0,0,0,.2);
-	background-color: rgba(0,0,0,0);
-	-moz-box-shadow: 0 0 0px 0px rgba(0,0,0,0);
-	-webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,0);
-	box-shadow: 0 0 0px 0px rgba(0,0,0,0);">
-          <tr>
-          <td >
-          <div align="center"><button type="submit" formmethod="post" class="btn btn-inverse"  onclick="return confirm('确定要添加吗？')">保存</button></div></td>
-          <td>
-          <div  align="center"><button type="button" class="btn btn-inverse" onClick="JavaScript:location.href='book.php';">返回</div>
-          </td>
-          </tr>
-          </table>
 
-          </td>
-        </tr>
-</table>
-  <input type="hidden" name="MM_insert" value="thisform">
-    </form>
+  <form class="form-horizontal yunyou-background yunyou-bgblur" action="<?php echo $editFormAction; ?>" name="thisform" method="POST" style="padding: 30px;">
+  <div class="form-inline">
+    <div class="form-group">
+      <label >书名：</label>
+      <input name="FSBOOK" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div for="FSBN" class="col-md-6 control-label">社团书号：</div>
+      <div class="col-md-6">
+      <input name="FSBN" id="FSBN" type="text" class="form-control" value="不填"  readonly style="background-color: transparent;">
+      </div>
+    </div>
+    <div class="col-md-3 form-group ">
+      <div for="BNUM" class="col-md-6 control-label">数量：</div>
+      <div class="col-md-6 input-group">
+      <input id="BNUM" name="BNUM" type="number" min="0" class="form-control" required="required" onKeyUp="samenum();">
+      <span class="input-group-addon">本</span>
+      </div>
+    </div>
+    <div class=" col-md-3 form-group" for="PRICE">
+      <div class="col-md-6 control-label">价格：</div>
+      <div class="col-md-6 input-group">
+      <input name="PRICE" id="PRICE" class="form-control" >
+      <span class="input-group-addon">￥</span>
+      </div>
+    </div>
+    <div class="col-md-4 form-group ">
+      <div class="col-md-4 control-label">作者：</div>
+      <div class="col-md-8">
+      <input name="AUTHOR" type="text" class="form-control" >
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">保管者：</div>
+      <div class="col-md-6"><input name="STORAGE" type="text" class="form-control" ></div>
+    </div>
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">剩余数量：</div>
+      <div class="col-md-6 input-group">
+      <input id="ISBOR" name="ISBOR" type="number" min="0" class="form-control" >
+      <span class="input-group-addon">本</span>
+      </div>
+    </div>
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">被借次数：</div>
+      <div class="col-md-6 input-group">
+      <input name="BORNUM" type="number" min="0" class="form-control" value="0">
+      <span class="input-group-addon">次</span>
+      </div>
+    </div>
+    <div class=" col-md-4 form-group">
+      <div class="col-md-4 control-label">ISBN：</div>
+      <div class="col-md-8">
+      <input name="ISBN" type="text" class="form-control" >
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <div class="control-label col-md-6">豆瓣评分：</div>
+      <div class="col-md-6"><input name="BSCORE" type="text" class="form-control"></div>
+    </div>
+    <div class="col-md-4 form-group">
+      <div class="control-label col-md-4">出版社：</div>
+      <div class="col-md-8"><input name="PUB" type="text" class="form-control" ></div>
+    </div>
+    <div class="col-md-5 form-group">
+      <div class="control-label col-md-6">出版日期：</div>
+      <div class="col-md-6 input-group"><input name="BDATE" type="date" class="form-control" >
+      <span class="glyphicon glyphicon-calendar input-group-addon "></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="control-label col-md-1">备注：</div>
+    <div class="col-md-11"><input name="NOTE" type="text" class="form-control"></div>
+  </div>
+  <hr>
+
+    <h3>简介</h3>
+    <div class="form-group"><textarea name="INFO" class="form-control" rows="5"></textarea></div>
+
+
+    <div class="form-group">
+      <div class="col-md-6 col-xs-6"><button type="submit" formmethod="post" class="btn btn-inverse"  onclick="return confirm('确定要添加吗？')">保存</button></div>
+      <div class="col-md-6 col-xs-6"><button type="button" class="btn btn-inverse" onClick="JavaScript:location.href='book.php';">返回</div>
+    </div>
+
+    <input type="hidden" name="MM_insert" value="thisform">
+  </form>
+
   </div>
 
 </div>

@@ -36,7 +36,7 @@ include("topwhite.php");
   <h1>借阅情况<small></small></h1>
   <hr>
 </div>
-<div class="container yunyou-background yunyou-bgblur">
+<div class="yunyou-background yunyou-bgblur container ">
 
 <?php mysql_select_db($database_mymember, $mymember);
 $booklimit = mysql_query("select BLIMIT from member WHERE ID ='".$_SESSION['MM_Username']."'", $mymember);
@@ -127,7 +127,7 @@ $sql=mysql_query("select count(*) as total from orderbook where ID='".$_SESSION[
       $infobook2=mysql_fetch_array($sqlbook2);
       ?>
 	  <a href="bookinformation.php?FSBN=<?php echo $info1['FSBN'];?>"><?php echo $infobook2['FSBOOK'];?></a></div></td>
-      <td ><div align="center"><?php echo $borrowbook['FSBN'];?></a></div></td>
+      <td ><div align="center"><?php echo $borrowbook['FSBN'];?></div></td>
       <td ><div align="center"><?php echo $borrowbook['BDATE'];?></div></td> 
       <td ><div align="center"><?php echo $borrowbook['RDATE'];?></div></td>
     </tr>

@@ -37,7 +37,7 @@ include("topwhite.php");
   <h1>借阅情况<small></small></h1>
   <hr>
 </div>
-<div class="content">
+<div class="container yunyou-background yunyou-bgblur">
 <?php
 mysql_select_db($database_mymember, $mymember);
 $sql=mysql_query("select count(*) as total from orderbook",$mymember);

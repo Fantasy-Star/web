@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/vagrant/.composer/vendor/bin:/home/vagrant/bin:/home/vagrant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  0.18.1
+
+Node version: 
+  6.9.1
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "private": true,
+    "devDependencies": {
+      "gulp": "^3.8.8"
+    },
+    "dependencies": {
+      "laravel-elixir": "^4.0.0",
+      "bootstrap-sass": "^3.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPROTO: protocol error, symlink '../../../babylon/bin/babylon.js' -> '/home/vagrant/Code/FantasyStar-Web/node_modules/babel-core/node_modules/.bin/babylon'
+      at Error (native)

@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Fantasy Star</div>
+                <div class="title">幻星科幻协会</div>
             </div>
         </div>
     </body>

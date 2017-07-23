@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_upuser" value="name:ID;datatype:string,name:PASSWORD;datatype:string,name:NAME;datatype:string,name:SEX;datatype:int,name:JOB;datatype:string,name:TEL;datatype:string,name:EAMIL;datatype:string,name:ACADEMY;datatype:string,name:CLASS;datatype:string,name:BLIMIT;datatype:int" />
-</info>

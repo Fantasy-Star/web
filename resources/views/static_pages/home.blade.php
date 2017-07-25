@@ -6,7 +6,7 @@
     <h1>你好，幻想者！</h1>
     <p class="lead">
       幻星科幻协会 - Fantasy Star  &nbsp;
-      <a href="https://fantasystar.yunyoujun.cn">https://fantasystar.yunyoujun.cn</a>
+      <a href="http://fantasystar.yunyoujun.cn">http://fantasystar.yunyoujun.cn</a>
     </p>
     <p>
       幻想，从此处起航。

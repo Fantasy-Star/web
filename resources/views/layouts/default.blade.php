@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'Sample') - Fantasy Star</title>
+    <title>@yield('title', 'Sample App') - Fantasy Star</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-      @include('layouts._header')
+    @include('layouts._header')
 
     <div class="container">
-      @include('shared.messages')
-      @yield('content')
-      @include('layouts._footer')
+      <div class="col-md-offset-1 col-md-10">
+        @include('shared.messages')
+        @yield('content')
+        @include('layouts._footer')
+      </div>
     </div>
+
+    <script src="/js/app.js"></script>
   </body>
 </html>

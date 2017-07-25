@@ -5781,6 +5781,11 @@ p {
   #logo:hover {
     color: #fff; }
 
+#logout {
+  cursor: default; }
+  #logout:hover {
+    background-color: transparent; }
+
 /* footer */
 footer {
   margin-top: 45px;
@@ -5849,5 +5854,8 @@ input {
 
 .panel {
   margin-top: 50px; }
+
+.checkbox input[type='checkbox'] {
+  width: auto; }
 
 /*# sourceMappingURL=app.css.map */

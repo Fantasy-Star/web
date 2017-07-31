@@ -1,7 +1,6 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 $navbar-color: #3c3e42;
-
 /* universal */
 
 body {
@@ -53,10 +52,6 @@ p {
 
 /* header */
 
-.navbar-inverse {
-  background-color: $navbar-color;
-}
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -76,131 +71,6 @@ p {
   &:hover {
     background-color: transparent;
   }
-}
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-
-  a {
-    color: #555;
-  }
-
-  a:hover {
-    color: #222;
-  }
-
-  small {
-    float: left;
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-
-  img.brand-icon {
-    width: 17px;
-    height: 17px;
-  }
-
-  .slogon {
-    font-size: 13px;
-    font-weight: bold;
-  }
-}
-
-/* sidebar */
-
-aside {
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-  }
-}
-
-section.user_info {
-  padding-bottom: 10px;
-  margin-top: 20px;
-  text-align: center;
-  .gravatar {
-    float: none;
-    max-width: 70px;
-  }
-  h1 {
-    font-size: 1.4em;
-    letter-spacing: -1px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-  }
-}
-
-.gravatar {
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-  max-width: 50px;
-  border-radius: 50%;
-}
-
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    text-align: center;
-    width: 33%;
-    border-left: 1px solid $gray-lighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: #337ab7;
-    }
-  }
-  strong {
-    display: block;
-    font-size: 1.2em;
-    color: black;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
-
-.users.follow {
-  padding: 0;
 }
 
 /* forms */

@@ -39,9 +39,13 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function gravatar($size = '100')
+    public function gravatar($size = '100',$email = '')
     {
-        $hash = md5(strtolower(trim($this->attributes['email'])));
+        if($email){
+            $hash = md5(strtolower(trim($email)));
+        }else{
+            $hash = md5(strtolower(trim($this->attributes['email'])));
+        }
         return "http://www.gravatar.com/avatar/$hash?s=$size";
     }
 

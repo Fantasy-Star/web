@@ -12,5 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-  mix.sass('app.scss').browserify('app.js');
+  mix.sass('fantasystar.scss')
+    // .sass('app.scss')
+    .browserify('app.js')
+    ;
 });

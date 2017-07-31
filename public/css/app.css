@@ -5766,9 +5766,6 @@ p {
   line-height: 1.7em; }
 
 /* header */
-.navbar-inverse {
-  background-color: #3c3e42; }
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -5785,96 +5782,6 @@ p {
   cursor: default; }
   #logout:hover {
     background-color: transparent; }
-
-/* footer */
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777; }
-  footer a {
-    color: #555; }
-  footer a:hover {
-    color: #222; }
-  footer small {
-    float: left; }
-  footer ul {
-    float: right;
-    list-style: none; }
-    footer ul li {
-      float: left;
-      margin-left: 15px; }
-  footer img.brand-icon {
-    width: 17px;
-    height: 17px; }
-  footer .slogon {
-    font-size: 13px;
-    font-weight: bold; }
-
-/* sidebar */
-aside section {
-  padding: 10px 0;
-  margin-top: 20px; }
-  aside section:first-child {
-    border: 0;
-    padding-top: 0; }
-  aside section span {
-    display: block;
-    margin-bottom: 3px;
-    line-height: 1; }
-
-section.user_info {
-  padding-bottom: 10px;
-  margin-top: 20px;
-  text-align: center; }
-  section.user_info .gravatar {
-    float: none;
-    max-width: 70px; }
-  section.user_info h1 {
-    font-size: 1.4em;
-    letter-spacing: -1px;
-    margin-bottom: 3px;
-    margin-top: 15px; }
-
-.gravatar {
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-  max-width: 50px;
-  border-radius: 50%; }
-
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0; }
-  .stats a {
-    float: left;
-    padding: 0 10px;
-    text-align: center;
-    width: 33%;
-    border-left: 1px solid #eeeeee;
-    color: gray; }
-    .stats a:first-child {
-      padding-left: 0;
-      border: 0; }
-    .stats a:hover {
-      text-decoration: none;
-      color: #337ab7; }
-  .stats strong {
-    display: block;
-    font-size: 1.2em;
-    color: black; }
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px; }
-  .user_avatars .gravatar {
-    margin: 1px 1px; }
-  .user_avatars a {
-    padding: 0; }
-
-.users.follow {
-  padding: 0; }
 
 /* forms */
 #follow_form button {

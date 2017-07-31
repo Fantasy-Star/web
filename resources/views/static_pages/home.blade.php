@@ -12,19 +12,23 @@
         @include('shared.feed')
       </div>
       <aside class="col-md-4">
-        <section class="user_info">
-          @include('shared.user_info', ['user' => Auth::user()])
-        </section>
-        <section class="stats">
-          @include('shared.stats', ['user' => Auth::user()])
+        <section class="element-panel">
+          <section class="user_info">
+            @include('shared.user_info', ['user' => Auth::user()])
+          </section>
+          <section class="stats">
+            @include('shared.stats', ['user' => Auth::user()])
+          </section>
         </section>
       </aside>
     </div>
   @else
     <div class="jumbotron">
       <h1>你好，幻想者！</h1>
+      <h1>Hello,Fantast！</h1>
       <p class="lead">
-        幻星科幻协会 - Fantasy Star  &nbsp;
+        幻星科幻协会 - Fantasy Star
+        <br/>
         <a href="http://fantasystar.yunyoujun.cn">http://fantasystar.yunyoujun.cn</a>
       </p>
       <p>

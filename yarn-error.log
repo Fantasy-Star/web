@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js add jquery --save --no-bin-links
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js install
 
 PATH: 
   /home/vagrant/.composer/vendor/bin:/home/vagrant/bin:/home/vagrant/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -21,7 +21,8 @@ npm manifest:
     },
     "dependencies": {
       "laravel-elixir": "^4.0.0",
-      "bootstrap-sass": "^3.0.0"
+      "bootstrap-sass": "^3.0.0",
+      "font-awesome": "latest"
     }
   }
 
@@ -32,14 +33,5 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: http://registry.npm.taobao.org/caniuse-db/download/caniuse-db-1.0.30000705.tgz: Request failed "500 Internal Server Error"
-      at Request.handleRequestError (/usr/share/yarn/lib/fetchers/tarball-fetcher.js:231:20)
-      at emitOne (events.js:96:13)
-      at Request.emit (events.js:188:7)
-      at Request.onRequestResponse (/usr/share/yarn/node_modules/request/request.js:986:10)
-      at emitOne (events.js:96:13)
-      at ClientRequest.emit (events.js:188:7)
-      at HTTPParser.parserOnIncomingClient (_http_client.js:474:21)
-      at HTTPParser.parserOnHeadersComplete (_http_common.js:99:23)
-      at Socket.socketOnData (_http_client.js:363:20)
-      at emitOne (events.js:96:13)
+  Error: EPROTO: protocol error, symlink '../../../babylon/bin/babylon.js' -> '/home/vagrant/Code/FantasyStar-Web/node_modules/babel-core/node_modules/.bin/babylon'
+      at Error (native)

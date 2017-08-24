@@ -6,6 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>@yield('title', 'Fantasy Star') - FantasyStar</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/favicon.ico" media="screen" />
+    <link rel="Bookmark" href="/img/logo/favicon.ico" >
+
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/app.css">
   </head>

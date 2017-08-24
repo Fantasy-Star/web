@@ -2,7 +2,7 @@
 @section('title', $title)
 
 @section('content')
-<div class="col-md-offset-2 col-md-8">
+<div class="col-md-offset-1 col-md-10 element-panel">
   <h1>{{ $title }}</h1>
   <ul class="users">
     @foreach ($users as $user)
@@ -12,7 +12,8 @@
       </li>
     @endforeach
   </ul>
-
-  {!! $users->render() !!}
+  <div class="text-center">
+    {!! $users->render() !!}
+  </div>
 </div>
 @stop

@@ -1,0 +1,197 @@
+/* background */
+$navbar-color : rgba(250, 250, 250, 0.9);
+$border-color : rgba(250, 250, 250, 0.4);
+$footer-color : rgba(11, 11, 11, 0.7);
+
+$bg-color: rgba(255, 255, 255, 0.9);
+$shadow-color:  rgba(9, 28, 38, 0.4);
+$font-color: #eee;
+
+body {
+  background: #000000 url(/img/pattern.png) center no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  font-family: 'San Francisco','Microsoft YaHei';
+}
+
+hr {
+  opacity: 0.3;
+  margin: 0px;
+}
+
+/* layout */
+
+.divider{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid $border-color;
+}
+
+/* navbar */
+.navbar-default{
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(250, 250, 250, 0.9)), color-stop(100%,rgba(250, 250, 250, 0.7)));
+  box-shadow: 0px 0px 15px $shadow-color;
+}
+
+/* footer */
+
+footer {
+  margin-top: 35px;
+  padding-top: 5px;
+  // border-top: 1px solid $border-color;
+  background-color: $footer-color;
+  color: $font-color;
+  a {
+    color: #eee;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:visited{
+    color: $font-color;
+  }
+
+  small {
+    float: left;
+  }
+
+  // .cut-line{
+  //   float: left;
+  //   padding: 0 10px;
+  //   text-align: center;
+  //   border-left: 1px solid $border-color;
+  //   &:first-child {
+  //     padding-left: 0;
+  //     border: 0;
+  //   }
+  // }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      padding: 0 10px;
+    }
+  }
+
+  img.brand-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .slogon {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+}
+
+.copyright{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #ddd;
+}
+
+/* panel */
+
+.jumbotron{
+  background-color: $bg-color;
+}
+
+.element-panel{
+  padding:20px;
+  background-color: $bg-color;
+  box-shadow: 0px 0px 8px $shadow-color;
+  border-radius: 5px;
+  margin-top:20px;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+  }
+}
+
+section.user_info {
+  padding-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+  .gravatar {
+    float: none;
+    max-width: 70px;
+  }
+  h1 {
+    font-size: 1.4em;
+    letter-spacing: -1px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    text-align: center;
+    width: 33%;
+    border-left: 1px solid $shadow-color;
+    color: gray;
+    &:first-child {
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #337ab7;
+    }
+  }
+  strong {
+    display: block;
+    font-size: 1.2em;
+    color: black;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}

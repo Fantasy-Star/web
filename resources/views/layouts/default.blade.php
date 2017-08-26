@@ -17,16 +17,14 @@
     @include('layouts._header')
 
     <div class="container">
-      <div class="col-md-12">
         @include('shared._messages')
         @yield('content')
-      </div>
     </div>
 
     @include('layouts._footer')
 
     <script src="/js/app.js"></script>
     <script src="https://use.fontawesome.com/10eb5b5549.js"></script>
-    <script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    <script type="text/javascript" color="255,255,255" opacity='0.8' zIndex="-2" count="33" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   </body>
 </html>

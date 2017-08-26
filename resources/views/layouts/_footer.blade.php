@@ -34,7 +34,7 @@
         <div class="divider"></div>
         <div class="row">
             <div class="col-md-12 copyright text-center">
-              Designed and encoded by <a href="www.yunyoujun.cn" target="_blank">YunYouJun</a>.
+              Designed and encoded by <a href="http://www.yunyoujun.cn" target="_blank">YunYouJun</a>.
             </div>
         </div>
     </div>

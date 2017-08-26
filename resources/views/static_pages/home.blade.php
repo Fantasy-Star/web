@@ -25,19 +25,28 @@
       </aside>
     </div>
   @else
-    <div class="jumbotron">
-      <h1>你好，幻想者！</h1>
-      <h1>Hello,Fantast！</h1>
+    <div class="jumbotron text-center">
+      <img src="/img/logo/logo.png" alt="Logo" class="img-circle">
+
+      <h1>Hello , Fantasy Star !</h1>
+
       <p class="lead">
-        幻星科幻协会 - Fantasy Star
-        <br/>
-        <a href="http://fantasystar.yunyoujun.cn">http://fantasystar.yunyoujun.cn</a>
-      </p>
-      <p>
-        幻想，从此处起航。
-      </p>
-      <p>
-        <a class="btn btn-lg btn-success" href="{{ route('signup') }}" role="button">现在注册</a>
+        <h3 class="m-b-md">幻星科幻协会 - Fantasy Star</h3>
+        <div class="links m-b-md">
+            <a href="">Novel</a>
+            <a href="">Film</a>
+            <a href="">Technology</a>
+            <a href="">Communication</a>
+            <a href="">Administration</a>
+        </div>
+        <div class="links m-b-md">
+          <a href="http://fantasystar.yunyoujun.cn">Fantasy Star</a>
+          <a href="http://www.yunyoujun.cn/">YunYouJun</a>
+          <a href="https://github.com/YunYouJun/FantasyStar-Web">GitHub</a>
+        </div>
+        <div>
+          <a class="btn btn-lg btn-info" href="{{ route('signup') }}" role="button">幻想，从此处起航</a>
+        </div>
       </p>
     </div>
   @endif

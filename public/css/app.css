@@ -8356,7 +8356,7 @@ body {
   background: rgba(0, 0, 0, 0.1) url(/img/pattern.jpg) center no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'San Francisco','Microsoft YaHei';
+  font-family: 'Raleway','San Francisco','Microsoft YaHei';
 }
 
 hr {
@@ -8369,7 +8369,7 @@ hr {
 .divider {
   margin-top: 0px;
   margin-bottom: 0px;
-  border-top: 1px solid rgba(250, 250, 250, 0.4);
+  border-top: 1px solid rgba(250, 250, 250, 0.3);
 }
 
 /* navbar */
@@ -8383,7 +8383,7 @@ hr {
 /* footer */
 
 footer {
-  margin-top: 35px;
+  margin-top: 30px;
   padding-top: 5px;
   background-color: rgba(11, 11, 11, 0.7);
   color: #eee;
@@ -8437,17 +8437,24 @@ footer .slogon {
 
 /* panel */
 
+.panel {
+  margin-top: 50px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 8px rgba(9, 28, 38, 0.4);
+          box-shadow: 0px 0px 8px rgba(9, 28, 38, 0.4);
+}
+
 .jumbotron {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 .element-panel {
+  margin-top: 20px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 0px 0px 8px rgba(9, 28, 38, 0.4);
           box-shadow: 0px 0px 8px rgba(9, 28, 38, 0.4);
   border-radius: 5px;
-  margin-top: 20px;
 }
 
 /* sidebar */
@@ -8555,8 +8562,20 @@ textarea {
   resize: vertical;
 }
 
-.jumbotron {
-  text-align: center;
+/* laravel default */
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
 }
 
 /* typography */
@@ -8621,27 +8640,6 @@ p {
 }
 
 /* forms */
-
-input,
-textarea,
-select,
-.uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
-}
-
-.panel {
-  margin-top: 50px;
-}
-
-.checkbox input[type='checkbox'] {
-  width: auto;
-}
 
 #follow_form button {
   margin: 0 auto;

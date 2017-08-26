@@ -22,6 +22,8 @@ Route::get('/welcome', function () {
 Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
+Route::get('/sponsor', 'StaticPagesController@about')->name('sponsor');
+Route::get('/contact', 'StaticPagesController@about')->name('contact');
 
 Route::get('signup', 'UsersController@create')->name('signup');
 Route::resource('users', 'UsersController');

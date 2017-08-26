@@ -27,8 +27,20 @@ textarea {
   resize: vertical;
 }
 
-.jumbotron {
-  text-align: center;
+/* laravel default */
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
 }
 
 /* typography */
@@ -86,26 +98,6 @@ p {
 }
 
 /* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
-}
-
-.panel {
-  margin-top: 50px;
-}
-
-.checkbox {
-  input[type='checkbox'] {
-    width: auto;
-  }
-}
 
 #follow_form button {
   margin: 0 auto;

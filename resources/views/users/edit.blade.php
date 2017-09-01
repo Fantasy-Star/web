@@ -1,11 +1,15 @@
 @extends('layouts.default')
-@section('title', '更新个人资料')
+@section('title', '编辑个人资料')
 
 @section('content')
-<div class="col-md-offset-2 col-md-8">
+<div class="col-md-3">
+
+</div>
+
+<div class="col-md-9">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="text-center">个人资料</h3>
+      <h3 class="text-center"><i class="fa fa-cog" aria-hidden="true"></i> 个人资料 </h3>
     </div>
       <div class="panel-body">
 
@@ -32,6 +36,15 @@
             </div>
 
             <div class="form-group">
+              <label for="academy">学院：</label>
+              <select class="form-control" name="academy">
+                @foreach($user->getAcademyName() as $academy_id=>$academy_name)
+                <option {{ $user->academy == $academy_id ? 'selected':'' }} value="{{ $academy_id }}"> {{ $academy_name }} </option>
+                @endforeach
+              </select>
+            </div>
+
+            <!-- <div class="form-group">
               <label for="password">密码：</label>
               <input type="password" name="password" class="form-control" value="{{ old('password') }}">
             </div>
@@ -39,7 +52,7 @@
             <div class="form-group">
               <label for="password_confirmation">确认密码：</label>
               <input type="password" name="password_confirmation" class="form-control" value="{{ old('password_confirmation') }}">
-            </div>
+            </div> -->
 
             <button type="submit" class="btn btn-primary">更新</button>
         </form>

@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\User;
 use Auth;
-
+use Flash;
 use Mail;
+
+use App\Http\Requests\UpdateUserRequest;
 
 class UsersController extends Controller
 {
@@ -72,25 +74,17 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(User $user, Request $request)
+    public function update(User $user, UpdateUserRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required|max:50',
-            'password' => 'confirmed|min:6'
-        ]);
-
         $this->authorize('update', $user);
-
-        $data = [];
-        $data['name'] = $request->name;
-        if ($request->password) {
-            $data['password'] = bcrypt($request->password);
+        try {
+            $request->performUpdate($user);
+            session()->flash('success', '个人资料更新成功！');
+        } catch (ImageUploadException $exception) {
+            session()->flash('danger', '个人资料更新失败！'.$exception->getMessage());
         }
-        $user->update($data);
 
-        session()->flash('success', '个人资料更新成功！');
-
-        return redirect()->route('users.show', $user->id);
+        return redirect()->route('users.edit', $user->id);
     }
 
     public function destroy(User $user)

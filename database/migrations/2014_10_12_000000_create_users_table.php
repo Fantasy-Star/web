@@ -18,10 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable()->comment('昵称');
             $table->string('email')->unique();
             $table->string('password');
-            $table->tinyInteger('sex')->default(0);
+            $table->enum('gender', ['♂', '♀', '未知'])->default('未知')->comment('性別');
             $table->string('stu_id', 12)->nullable()->unique()->comment('学号');
             $table->string('tel')->nullable()->comment('手机');
-            $table->tinyInteger('academy')->default(0)->comment('学院代号');
+            $table->char('academy', 2)->default('00')->comment('学院代号');
             $table->string('major')->nullable()->comment('专业');
             $table->string('class')->nullable()->comment('班级');
             $table->tinyInteger('department')->default(0)->comment('社团部门');

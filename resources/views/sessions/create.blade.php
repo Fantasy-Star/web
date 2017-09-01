@@ -15,19 +15,19 @@
 
         <div class="form-group form-group-lg">
           <div class="col-md-12">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <!-- <div class="input-group"> -->
+              <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> -->
               <input type="text" name="email" class="form-control" value="{{ old('email') }}" required placeholder="您的邮箱">
-            </div>
+            <!-- </div> -->
           </div>
         </div>
 
         <div class="form-group form-group-lg">
           <div class="col-md-12">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <!-- <div class="input-group"> -->
+              <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
               <input type="password" name="password" class="form-control" value="{{ old('password') }}" required placeholder="您的密码">
-            </div>
+            <!-- </div> -->
           </div>
         </div>
 

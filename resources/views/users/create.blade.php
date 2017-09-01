@@ -17,7 +17,7 @@
             <div class="col-md-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-order"></i></span>
-                <input type="text" name="stuid" class="form-control" value="{{ old('stuid') }}" placeholder="您的学号" required="">
+                <input type="text" name="stu_id" class="form-control" value="{{ old('stu_id') }}" placeholder="您的学号" required="">
               </div>
             </div>
           </div>
@@ -26,16 +26,7 @@
             <div class="col-md-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
-                <input type="text" name="nickname" class="form-control" value="{{ old('nickname') }}" placeholder="您的昵称" required="">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="您的姓名" required="">
+                <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="您的昵称" required="">
               </div>
             </div>
           </div>
@@ -66,7 +57,7 @@
               </div>
             </div>
           </div>
-          
+
           <button type="submit" class="btn btn-primary btn-block btn-lg">注册</button>
       </form>
     </div>

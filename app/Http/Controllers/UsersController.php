@@ -44,12 +44,18 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'stu_id' => 'required|digits:12',
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed|min:6'
+        ],[
+
+        ],[
+            'stu_id' => '学号',
         ]);
 
         $user = User::create([
+            'stu_id' => $request->stu_id,
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -100,13 +106,12 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'fantasystar@yunyoujun.cn';
-        $name = 'Fantasy Star - 幻星科幻协会';
+
         $to = $user->email;
         $subject = "感谢加入幻星科幻协会 - Fantasy Star！请确认你的邮箱。";
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 

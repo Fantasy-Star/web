@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">更新密码</div>
+                <div class="panel-heading">
+                    <h1 class="text-center">更新密码</h1>
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))

@@ -28,7 +28,7 @@ Route::get('/contact', 'StaticPagesController@about')->name('contact');
 
 // 注册
 Route::get('signup', 'UsersController@create')->name('signup');
-Route::resource('users', 'UsersController');
+
 // 注册邮箱确认
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
 
@@ -37,14 +37,19 @@ Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
+// 状态
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
+
+//··用户··
+Route::resource('users', 'UsersController');
 // 密码管理
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-
-// 状态
-Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
+//修改密码
+Route::get('/users/{id}/edit_password', 'UsersController@editPassword')->name('users.edit_password');
+Route::patch('/users/{id}/update_password', 'UsersController@updatePassword')->name('users.update_password');
 
 // 关注
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
@@ -52,3 +57,6 @@ Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.
 
 Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
 Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
+
+//头像
+Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');

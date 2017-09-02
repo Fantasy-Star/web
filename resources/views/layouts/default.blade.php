@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="keywords" content="幻星,fantasystar,幻星科幻协会,上海海事大学幻星科幻协会,科幻社团,科幻协会" />
+    <meta name="author" content="云游君" />
+    <meta name="description" content="@section('description') Fantasy Star - 幻星科幻协会 是上海海事大学唯一的科幻协会，致力于推广校园科幻文化。 @show" />
 
     <title>@yield('title', 'Fantasy Star') - FantasyStar</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/favicon.ico" media="screen" />
-    <link rel="Bookmark" href="/img/logo/favicon.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
+    <link rel="Bookmark" href="/favicon.ico" >
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"> -->
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
   </head>
   <body>
     @include('layouts._header')
@@ -23,7 +27,7 @@
 
     @include('layouts._footer')
 
-    <script src="/js/app.js"></script>
+    <script src="{{ asset('/assets/js/app.js') }}"></script>
     <script src="https://use.fontawesome.com/10eb5b5549.js"></script>
     <script type="text/javascript">
         function browserRedirect() {

@@ -12,10 +12,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    const sex = [
-        '0' => '未知',
-        '1' => '♂ 男',
-        '2' => '♀ 女',
+    const departments = [
+        '0' => '尚未决定',
+        '1' => '小说部',
+        '2' => '电影部',
+        '3' => '科技部',
+        '4' => '外联部',
+        '5' => '行政部',
     ];
 
     const academys = [
@@ -119,5 +122,15 @@ class User extends Authenticatable
         }
 
         return self::academys;
+    }
+
+    // 部门名称
+    public function getDepartmentName($department_id = null)
+    {
+        if($department_id !== null){
+            return array_key_exists($department_id, self::departments) ? self::departments[$department_id] : departments['0'];
+        }
+
+        return self::departments;
     }
 }

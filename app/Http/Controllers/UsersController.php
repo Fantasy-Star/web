@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\User;
 use Auth;
-use Flash;
 use Mail;
 
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\ResetPasswordRequest;
 
 class UsersController extends Controller
 {
@@ -77,12 +77,8 @@ class UsersController extends Controller
     public function update(User $user, UpdateUserRequest $request)
     {
         $this->authorize('update', $user);
-        try {
-            $request->performUpdate($user);
-            session()->flash('success', '个人资料更新成功！');
-        } catch (ImageUploadException $exception) {
-            session()->flash('danger', '个人资料更新失败！'.$exception->getMessage());
-        }
+        $request->performUpdate($user);
+        session()->flash('success', '个人资料更新成功！');
 
         return redirect()->route('users.edit', $user->id);
     }
@@ -134,5 +130,33 @@ class UsersController extends Controller
         $users = $user->followers()->paginate(20);
         $title = '粉丝';
         return view('users.show_follow', compact('users', 'title'));
+    }
+
+//    avatar
+    public function editAvatar($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+        return view('users.edit_avatar', compact('user'));
+    }
+//    password
+    public function editPassword($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        return view('users.edit_password', compact('user'));
+    }
+    public function updatePassword($id, ResetPasswordRequest $request)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        session()->flash('success', '密码修改成功！');
+
+        return redirect(route('users.edit_password', $id));
     }
 }

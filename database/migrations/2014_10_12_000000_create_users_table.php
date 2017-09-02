@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable()->comment('昵称');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('gender', ['♂', '♀', '未知'])->default('未知')->comment('性別');
+            $table->enum('gender', ['male', 'female', 'unselected'])->default('unselected')->comment('性別');
             $table->string('stu_id', 12)->nullable()->unique()->comment('学号');
             $table->string('tel')->nullable()->comment('手机');
             $table->char('academy', 2)->default('00')->comment('学院代号');

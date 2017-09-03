@@ -21,6 +21,12 @@
               </a>
             </div>
 
+              <h4 class="text-center">
+                  <span class="label label-{{ $user->verified == 0 ? 'default' : 'success' }}">
+                      {{ $user->verified == 0 ? '未认证' : '已认证 - '.$user->identity }}
+                  </span>
+              </h4>
+
             <form class="form-horizontal" method="POST" action="{{ route('users.update', $user->id )}}">
                 {{ method_field('PATCH') }}
                 {{ csrf_field() }}

@@ -37,7 +37,19 @@ class UsersTableSeeder extends Seeder
 
         $user->is_admin = true;
         $user->verified = 1;
+        $user->identity = '管理员';
         $user->activated = true;
         $user->save();
+
+        //FantasyStar官方账号
+        $star = User::find(2);
+        $star->name = '幻星科幻协会';
+        $user->email = 'fantasystar@elpsy.cn';
+        $user->password = bcrypt('yunyou');
+        $star->city = '上海市浦东新区';
+        $star->verified = 1;
+        $star->identity = '社团官方账号';
+        $user->introduction = '我们的征途是星辰大海！';
+
     }
 }

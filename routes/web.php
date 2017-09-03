@@ -23,9 +23,12 @@ Route::get('/welcome', function () {
 Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
-Route::get('/sponsor', 'StaticPagesController@about')->name('sponsor');
-Route::get('/contact', 'StaticPagesController@about')->name('contact');
+Route::get('/sponsor', 'StaticPagesController@sponsor')->name('sponsor');
+Route::get('/contact', 'StaticPagesController@contact')->name('contact');
+Route::get('/valhalla', 'StaticPagesController@valhalla')->name('valhalla');
 
+// -------------------------用户----------------------------------------------------
+Route::resource('users', 'UsersController');
 // 注册
 Route::get('signup', 'UsersController@create')->name('signup');
 
@@ -39,9 +42,6 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 // 状态
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
-
-//··用户··
-Route::resource('users', 'UsersController');
 // 密码管理
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

@@ -22,6 +22,7 @@
             <li><a href="{{ route('users.index') }}">成员</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img class="img-circle" alt="Summer" src="{{ Auth::user()->gravatar('20') }}" />
                 {{ Auth::user()->name }} <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">

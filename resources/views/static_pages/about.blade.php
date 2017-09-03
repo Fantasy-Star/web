@@ -22,7 +22,23 @@
 
     <h2>网站简介</h2>
     <p>
-      ……
+      某家伙业余开发的社团官方网站，至于能否实用，尚不可知。
+      <br>
+      实力有限，精力有限，残留Bug大概很多，许多预想功能尚在施工中，敬请期待啦！
+      <br>
+      <ul class="nav nav-tabs nav-justified">
+        <li><a href="" class="bg-info">建议留言板</a></li>
+        <li><a href="" class="bg-danger">BUG反馈区</a></li>
+        <li><a href="{{ route('valhalla') }}" class="bg-success">幻星英灵殿</a></li>
+        <li><a href="" class="bg-warning">幻星功德簿</a></li>
+      </ul>
     </p>
+
+    <div class="text-center alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      总之，有 <strong>BUG</strong> 或者任何 <strong>建议</strong> 请尽情反馈我！(<del>呸，赞助我也行~</del>)
+    </div>
+
   </div>
+
 @stop

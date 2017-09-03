@@ -47,7 +47,9 @@
                 <br>
 
                 <div class="col-sm-offset-2 col-sm-8">
-                    <button type="submit" class="btn btn-primary btn-block">修改头像</button>
+                    <a href="http://cn.gravatar.com/" target="_blank">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">修改头像</button>
+                    </a>
                 </div>
 
             </div>

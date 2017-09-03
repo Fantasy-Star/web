@@ -4,7 +4,9 @@
 ---
 
 > ## Introduce
->   Base on Laravel 5.5.
+ 
+Base on Laravel 5.5.
+
     A website about science society association.
     Test Address <http://association.yunyoujun.cn>
 
@@ -26,6 +28,12 @@
 
 ---
 
+- ### Complete
+
+1.User Info
+
+---
+
 - ### Intend
 1. Novel display
 2. Vote for product
@@ -33,5 +41,5 @@
 ---
 
 > ## Support or Contact
-- Blog : <http://yunyoujun.cn>
+- Blog : <http://www.yunyoujun.cn>
 - Email : <910426929@qq.com> or <me@yunyoujun.cn>

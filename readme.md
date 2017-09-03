@@ -4,15 +4,11 @@
 ---
 
 > ## Introduce
-<<<<<<< HEAD
  
-Base on Laravel 5.5.
+- Base on Laravel 5.5.
+- Test Address <http://association.yunyoujun.cn>
 
-=======
->   Base on Laravel 5.5.
->>>>>>> d52a14a04c0b8a55fa182b916239161bd508762e
     A website about science society association.
-    Test Address <http://association.yunyoujun.cn>
 
 ---
 

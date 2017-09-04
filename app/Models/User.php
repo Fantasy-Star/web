@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use App\Notifications\ResetPassword;
 use Auth;
+use Cache;
 
 class User extends Authenticatable
 {
@@ -71,6 +72,7 @@ class User extends Authenticatable
         return $this->hasMany(Status::class);
     }
 
+//    关注的用户 所发布的状态
     public function feed()
     {
         $user_ids = Auth::user()->followings->pluck('id')->toArray();

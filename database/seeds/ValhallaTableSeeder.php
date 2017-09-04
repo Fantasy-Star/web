@@ -161,7 +161,7 @@ class ValhallaTableSeeder extends Seeder
                     'position' => '科技部部长',
                     'department' => 3,
                     'user_id' => 1,
-                    'description' => '',
+                    'description' => '网站开发者兼管理员',
                 ),
             15 =>
                 array(

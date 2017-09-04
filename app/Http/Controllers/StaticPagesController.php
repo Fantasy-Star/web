@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Models\User;
 use App\Models\Status;
+use App\Models\Role;
 use Auth;
 
 class StaticPagesController extends Controller
@@ -34,7 +36,7 @@ class StaticPagesController extends Controller
 
     public function valhalla()
     {
-        $users = User::byRolesName('valhalla');
-        return view('static_pages.valhalla', compact('users'));
+        $heros = Role::getAllHero();
+        return view('static_pages.valhalla', compact('heros'));
     }
 }

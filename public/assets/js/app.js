@@ -776,6 +776,10 @@ __webpack_require__(9);
 //     el: '#app'
 // });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {

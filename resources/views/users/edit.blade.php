@@ -9,7 +9,9 @@
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="text-center"><i class="fa fa-cog" aria-hidden="true"></i> 个人资料 </h3>
+          <h3 class="text-center">
+              <span class="label label-info">UID : {{ $user->id }}</span>
+          </h3>
         </div>
           <div class="panel-body">
 
@@ -20,7 +22,9 @@
                 <img src="{{ $user->gravatar('200') }}" alt="{{ $user->name }}" class="gravatar box-shadow"/>
               </a>
             </div>
+              <h5 class="text-center">
 
+              </h5>
               <h4 class="text-center">
                   <span class="label label-{{ $user->verified == 0 ? 'default' : 'success' }}">
                       {{ $user->verified == 0 ? '未认证' : '已认证 - '.$user->identity }}
@@ -136,6 +140,15 @@
                     </div>
                     <div class="col-sm-4 help-block">
                         手机号码
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label"><i class="fa fa-birthday-cake"></i> 生日</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="birthday" type="date" value="{{ $user->birthday }}">
+                    </div>
+                    <div class="col-sm-4 help-block">
                     </div>
                 </div>
 

@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('major')->nullable()->comment('专业');
             $table->string('class')->nullable()->comment('班级');
             $table->tinyInteger('department')->default(0)->comment('社团部门');
+            $table->date('birthday')->nullable()->comment('生日');
             $table->string('city')->nullable()->comment('城市');
             $table->string('personal_website')->nullable();
             $table->string('introduction')->nullable();

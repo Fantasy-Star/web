@@ -8,7 +8,7 @@ use App\Models\User;
 class UpdateUserRequest extends FormRequest
 {
     public $allowed_fields = [
-        'name', 'real_name', 'academy', 'city', 'gender',
+        'name', 'real_name', 'academy', 'city', 'gender','birthday',
         'department', 'tel', 'major' ,'class' ,'qq' ,'wechat',
         'introduction', 'weibo_name', 'weibo_link', 'email' ,'personal_website',
     ];

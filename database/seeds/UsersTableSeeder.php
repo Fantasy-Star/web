@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
         $user->gender = 'male';
         $user->real_name = '云游君';
         $user->department = '3';
+        $user->birthday = '1997-07-30';
         $user->city = '江苏省连云港市';
         $user->major = '计算机科学与技术';
         $user->class = '计算机141';

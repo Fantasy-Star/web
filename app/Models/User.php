@@ -13,7 +13,7 @@ class User extends Authenticatable
     use Notifiable;
 
     const departments = [
-        '0' => '尚未决定',
+        '0' => '未决定',
         '1' => '小说部',
         '2' => '电影部',
         '3' => '科技部',

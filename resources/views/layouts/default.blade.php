@@ -16,6 +16,7 @@
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
   </head>
   <body>
     @include('layouts._header')
@@ -28,7 +29,6 @@
     @include('layouts._footer')
 
     <script src="{{ asset('/assets/js/app.js') }}"></script>
-    <script src="https://use.fontawesome.com/10eb5b5549.js"></script>
     <script type="text/javascript">
         function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();

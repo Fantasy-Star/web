@@ -19,6 +19,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+//畅言
+Route::get('/changyan/login', 'ChangyanController@getuserinfo')->name('changyan_login');
+Route::get('/changyan/logout', 'ChangyanController@changyan_logout')->name('changyan_logout');
+
 // static_pages
 Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('/help', 'StaticPagesController@help')->name('help');

@@ -26,7 +26,7 @@
     </div>
   @else
     <div class="jumbotron text-center">
-      <img src="/img/logo/logo.png" alt="Logo" class="img-circle">
+      <img src="/assets/img/logo/logo.png" alt="Logo" class="img-circle">
 
       <h1>Hello , Fantasy Star !</h1>
 
@@ -50,4 +50,16 @@
       </p>
     </div>
   @endif
+  <!--PC和WAP自适应版-->
+  <div class="panel panel-default">
+      <div id="SOHUCS" sid="home" ></div>
+  </div>
+  <script type="text/javascript">
+      (function(){
+          var appid = 'cytcmrKfy';
+          var conf = 'prod_c166102c81bde2ffeca0f02bbb4d6957';
+          var width = window.innerWidth || document.documentElement.clientWidth;
+          if (width < 960) {
+              window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
 @stop

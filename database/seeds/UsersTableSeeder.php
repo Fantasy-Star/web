@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
         $user->tel = '15000985609';
         $user->weibo_name = '机智的云游君';
         $user->weibo_link = 'http://weibo.com/jizhideyunyoujun';
-        $user->personal_website = 'yunyoujun.cn';
+        $user->personal_website = 'http://yunyoujun.cn';
         $user->qq = '910426929';
         $user->wechat = 'QQ910426929';
         $user->introduction = 'All at sea.';

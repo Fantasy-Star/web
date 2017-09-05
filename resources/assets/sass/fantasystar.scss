@@ -8,7 +8,7 @@ $shadow-color:  rgba(9, 28, 38, 0.4);
 $font-color: #eee;
 
 body {
-  background: rgba(0,0,0,0.1) url(/img/pattern.jpg) center no-repeat;
+  background: rgba(0,0,0,0.1) url( " /assets/img/pattern.jpg " ) center no-repeat;
   background-attachment:fixed;
   background-size:cover;
   font-family: 'Raleway','San Francisco','Microsoft YaHei';

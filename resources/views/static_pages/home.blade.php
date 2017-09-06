@@ -26,40 +26,35 @@
     </div>
   @else
     <div class="jumbotron text-center">
-      <img src="/assets/img/logo/logo.png" alt="Logo" class="img-circle">
+      <img src="{{ asset('/assets/img/logo/logo.png') }}" alt="Logo" class="img-circle">
 
       <h1>Hello , Fantasy Star !</h1>
 
       <p class="lead">
-        <h3 class="m-b-md">幻星科幻协会 - Fantasy Star</h3>
+        <h3 class="m-b-md">
+            <a href="{{ route('about') }}" data-toggle="tooltip" data-placement="bottom" title="关于我们">幻星科幻协会 - Fantasy Star</a>
+        </h3>
         <div class="links m-b-md">
-            <a href="">Novel</a>
-            <a href="">Film</a>
-            <a href="">Technology</a>
-            <a href="">Communication</a>
-            <a href="">Administration</a>
+            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">小说部</a>
+            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">电影部</a>
+            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">科技部</a>
+            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">外联部</a>
+            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">行政部</a>
         </div>
-        <div class="links m-b-md">
-          <a href="http://fantasystar.yunyoujun.cn">Fantasy Star</a>
-          <a href="http://www.yunyoujun.cn/">YunYouJun</a>
-          <a href="https://github.com/YunYouJun/FantasyStar-Web">GitHub</a>
+        <div class="m-b-md">
+            <ul class="list-inline">
+                <li><a href="mailto:fantasystar@elpsy.cn" target="_blank" data-toggle="tooltip" data-placement="top" title="反馈邮箱：fantasystar@elpsy.cn"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="http://weibo.com/u/3784345967?refer_flag=1001030102_&is_all=1" target="_blank" data-toggle="tooltip" data-placement="top" title="微博：上海海事大学幻星科幻协会"><i class="fa fa-weibo"></i></a></li>
+                <li><a href="/assets/img/QRcode/WeChat-FantasyStar.png" target="_blank" data-toggle="tooltip" data-placement="top" title="微信公众号：幻星科幻"><i class="fa fa-weixin"></i></a></li>
+                <li><a href="https://jq.qq.com/?_wv=1027&k=4E6I6Xl" target="_blank" data-toggle="tooltip" data-placement="top" title="QQ群：182332107"><i class="fa fa-qq"></i></a></li>
+                <li><a href="https://github.com/YunYouJun/FantasyStar-Web" target="blank" data-toggle="tooltip" data-placement="top" title="GitHub项目代码"><i class="fa fa-github"></i></a></li>
+            </ul>
         </div>
+
         <div>
-          <a class="btn btn-lg btn-info" href="{{ route('signup') }}" role="button">幻想，从此处起航</a>
+          <a class="btn btn-lg btn-info" href="{{ route('signup') }}" role="button" data-toggle="tooltip" data-placement="bottom" title="注册成为会员">幻想，从此处起航</a>
         </div>
       </p>
     </div>
   @endif
-  <!--PC和WAP自适应版-->
-  <div class="panel panel-default">
-      <div id="SOHUCS" sid="home" ></div>
-  </div>
-  <script type="text/javascript">
-      (function(){
-          var appid = 'cytcmrKfy';
-          var conf = 'prod_c166102c81bde2ffeca0f02bbb4d6957';
-          var width = window.innerWidth || document.documentElement.clientWidth;
-          if (width < 960) {
-              window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-
 @stop

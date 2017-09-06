@@ -30,6 +30,8 @@ Route::get('/about', 'StaticPagesController@about')->name('about');
 Route::get('/sponsor', 'StaticPagesController@sponsor')->name('sponsor');
 Route::get('/contact', 'StaticPagesController@contact')->name('contact');
 Route::get('/valhalla', 'StaticPagesController@valhalla')->name('valhalla');
+Route::get('/bug', 'StaticPagesController@bug')->name('bug');
+Route::get('/advice', 'StaticPagesController@advice')->name('advice');
 
 // -------------------------用户----------------------------------------------------
 Route::resource('users', 'UsersController');

@@ -26,18 +26,41 @@
       <br>
       实力有限，精力有限，残留Bug大概很多，许多预想功能尚在施工中，敬请期待啦！
       <br>
-      <ul class="nav nav-tabs nav-justified">
-        <li><a href="" class="bg-info">建议留言板</a></li>
-        <li><a href="" class="bg-danger">BUG反馈区</a></li>
-        <li><a href="{{ route('valhalla') }}" class="bg-success">幻星英灵殿</a></li>
-        <li><a href="" class="bg-warning">幻星功德簿</a></li>
+    <blockquote>
+      <h4>使用技术：</h4>
+      <ul>
+        <li>后端框架： Laravel 5.5</li>
+        <li>前段框架： Bootstrap</li>
+        <li>开发环境： Homestead</li>
+        <li>线上环境： LNMP</li>
+        <li>开发语言： Php(>=7.0) & Html & Css & Javascript</li>
+        <li>云服务器： 阿里云 Linux Ubuntu 16.0.4</li>
+        <li>数据库： MariaDB 10.1.23</li>
       </ul>
+    </blockquote>
     </p>
 
-    <div class="text-center alert alert-danger alert-dismissable" role="alert">
+    <hr>
+    <i class="fa fa-github"></i> GitHub (项目源代码)：
+    <a target="_blank" href="https://github.com/YunYouJun/FantasyStar-Web">https://github.com/YunYouJun/FantasyStar-Web</a>
+    <hr>
+
+    <br>
+
+    <div class="text-center alert alert-danger alert-dismissable role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      总之，有 <strong>BUG</strong> 或者任何 <strong>建议</strong> 请尽情反馈我！(<del>呸，赞助我也行~</del>)
+      总之，有任何 <strong><a class="text-danger" href="{{ route('bug') }}">BUG</a></strong> 或者
+      <strong><a class="text-info" href="{{ route('advice') }}">建议</a></strong> 请尽情反馈我！
+      (<del><a class="text-success" href="{{ route('sponsor') }}">呸，赞助我也行~</a></del>)
     </div>
+
+    <ul class="nav nav-tabs nav-justified">
+      <li><a href="{{ route('help') }}" class="bg-primary" target="_blank">Q&A 问答区</a></li>
+      <li><a href="{{ route('advice') }}" class="bg-info" target="_blank">建议留言板</a></li>
+      <li><a href="{{ route('bug') }}" class="bg-danger" target="_blank">BUG反馈区</a></li>
+      <li><a href="{{ route('valhalla') }}" class="bg-success" target="_blank">幻星英灵殿</a></li>
+      <li><a href="{{ route('sponsor') }}" class="bg-warning" target="_blank">幻星功德簿</a></li>
+    </ul>
 
   </div>
 

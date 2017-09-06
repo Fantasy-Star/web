@@ -34,9 +34,30 @@ class StaticPagesController extends Controller
         return view('static_pages.about');
     }
 
+    public function contact()
+    {
+        $YunYouJun = User::find(1);
+        return view('static_pages.contact', compact('YunYouJun'));
+    }
+
     public function valhalla()
     {
         $heros = Role::getAllHero();
         return view('static_pages.valhalla', compact('heros'));
+    }
+
+    public function bug()
+    {
+        return view('static_pages.bug');
+    }
+
+    public function advice()
+    {
+        return view('static_pages.advice');
+    }
+
+    public function sponsor()
+    {
+        return view('static_pages.sponsor');
     }
 }

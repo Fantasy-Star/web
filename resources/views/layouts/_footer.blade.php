@@ -17,10 +17,10 @@
             </div>
               <div class="col-sm-4 text-center copyright">
                   <ul>
-                      <li><a href="{{ route('help') }}">帮助</a></li>
                       <li><a href="{{ route('about') }}">关于</a></li>
-                      <li><a href="{{ route('sponsor') }}">赞助</a></li>
                       <li><a href="{{ route('contact') }}">联系</a></li>
+                      <li><a href="{{ route('help') }}">帮助</a></li>
+                      <li><a href="{{ route('sponsor') }}">赞助</a></li>
                   </ul>
               </div>
           </div>

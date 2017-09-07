@@ -36,6 +36,7 @@
         <li>开发语言： Php(>=7.0) & Html & Css & Javascript</li>
         <li>云服务器： 阿里云 Linux Ubuntu 16.0.4</li>
         <li>数据库： MariaDB 10.1.23</li>
+        <li>社会化评论：搜狐-畅言</li>
       </ul>
     </blockquote>
     </p>

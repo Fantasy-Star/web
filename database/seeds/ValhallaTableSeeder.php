@@ -243,7 +243,7 @@ class ValhallaTableSeeder extends Seeder
                     'position' => '小说部部长',
                     'department' => 1,
                     'user_id' => null,
-                    'description' => '',
+                    'description' => '“许愿弓呆”',
                 ),
             23 =>
                 array(
@@ -393,7 +393,7 @@ class ValhallaTableSeeder extends Seeder
                     'position' => '科技部部长',
                     'department' => 3,
                     'user_id' => null,
-                    'description' => '',
+                    'description' => '根据某不知名算法计算，零花钱大概在两千万左右。',
                 ),
             38 =>
                 array(

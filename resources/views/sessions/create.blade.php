@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="col-md-offset-3 col-md-6">
-  <div class="panel panel-default">
+  <div class="panel panel-default  m-b-md">
     <div class="panel-heading">
       <h1 class="text-center">登录</h1>
     </div>

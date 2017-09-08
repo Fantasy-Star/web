@@ -19,6 +19,9 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fs-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="{{ route('books.index') }}">藏书</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::check())
             <li><a href="{{ route('users.index') }}">成员</a></li>

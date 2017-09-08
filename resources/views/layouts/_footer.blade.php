@@ -19,6 +19,7 @@
                   <ul>
                       <li><a href="{{ route('about') }}">关于</a></li>
                       <li><a href="{{ route('contact') }}">联系</a></li>
+                      <li><a href="{{ route('bug') }}" target="_blank" data-toggle="tooltip" data-placement="top" title="BUG反馈区"><i class="fa fa-bug"></i></a></li>
                       <li><a href="{{ route('help') }}">帮助</a></li>
                       <li><a href="{{ route('sponsor') }}">赞助</a></li>
                   </ul>

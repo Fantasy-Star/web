@@ -32,26 +32,26 @@ function lang($text, $parameters = [])
     return str_replace('FantasyStar.', '', trans('FantasyStar.'.$text, $parameters));
 }
 
-function admin_link($title, $path, $id = '')
-{
-    return '<a href="'.admin_url($path, $id).'" target="_blank">' . $title . '</a>';
-}
+// function admin_link($title, $path, $id = '')
+// {
+//     return '<a href="'.admin_url($path, $id).'" target="_blank">' . $title . '</a>';
+// }
 
-function admin_url($path, $id = '')
-{
-    return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
-}
+// function admin_url($path, $id = '')
+// {
+//     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
+// }
 
-function admin_enum_style_output($value, $reverse = false)
-{
-    if ($reverse) {
-        $class = ($value === true || $value == 'yes') ? 'danger' : 'success';
-    } else {
-        $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
-    }
+// function admin_enum_style_output($value, $reverse = false)
+// {
+//     if ($reverse) {
+//         $class = ($value === true || $value == 'yes') ? 'danger' : 'success';
+//     } else {
+//         $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
+//     }
 
-    return '<span class="label bg-'.$class.'">'.$value.'</span>';
-}
+//     return '<span class="label bg-'.$class.'">'.$value.'</span>';
+// }
 
 function navViewActive($anchor)
 {

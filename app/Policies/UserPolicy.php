@@ -9,7 +9,7 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    public function admin(User $currentUser){
+    public function is_admin(User $currentUser){
         return $currentUser->is_admin;
     }
 

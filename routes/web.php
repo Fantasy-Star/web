@@ -34,11 +34,11 @@ Route::get('/bug', 'StaticPagesController@bug')->name('bug');
 Route::get('/advice', 'StaticPagesController@advice')->name('advice');
 
 //******* 用户 *******
-Route::resource('users', 'UsersController');
+Route::resource('users', 'UserController');
 
 // 注册
-Route::get('signup', 'UsersController@create')->name('signup');
-Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+Route::get('signup', 'UserController@create')->name('signup');
+Route::get('signup/confirm/{token}', 'UserController@confirmEmail')->name('confirm_email');
 // 登陆
 Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
@@ -53,25 +53,21 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-Route::get('/users/{id}/edit_password', 'UsersController@editPassword')->name('users.edit_password');
-Route::patch('/users/{id}/update_password', 'UsersController@updatePassword')->name('users.update_password');
+Route::get('/users/{id}/edit_password', 'UserController@editPassword')->name('users.edit_password');
+Route::patch('/users/{id}/update_password', 'UserController@updatePassword')->name('users.update_password');
 
 // 关注
-Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
-Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
+Route::get('/users/{user}/followings', 'UserController@followings')->name('users.followings');
+Route::get('/users/{user}/followers', 'UserController@followers')->name('users.followers');
 
 Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
 Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
 
 //头像
-Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
+Route::get('/users/{id}/edit_avatar', 'UserController@editAvatar')->name('users.edit_avatar');
 
 //******* 藏书 *******
 Route::resource('books', 'BooksController');
 
 //*******后台管理*******
-
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-    Route::get('/','admin\HomeController@index')->name('admin');
-});
-
+//app/Admin/routes

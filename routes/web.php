@@ -69,4 +69,9 @@ Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users
 //******* 藏书 *******
 Route::resource('books', 'BooksController');
 
+//*******后台管理*******
+
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::get('/','admin\HomeController@index')->name('admin');
+});
 

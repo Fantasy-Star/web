@@ -9,6 +9,10 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
+    public function admin(User $currentUser){
+        return $currentUser->is_admin;
+    }
+
     public function update(User $currentUser, User $user)
     {
         return $currentUser->id === $user->id;

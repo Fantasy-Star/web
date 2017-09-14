@@ -12,8 +12,8 @@
                             <th class="text-center">序号</th>
                             <th class="text-center">书名</th>
                             <th class="text-center">作者</th>
-                            <th class="text-center">总数</th>
-                            <th class="text-center">状态</th>
+                            <th class="text-center">总数/本</th>
+                            <th class="text-center">在库/本</th>
                             <th class="text-center">出版社</th>
                             <th class="text-center">出版日期</th>
                             <th class="text-center">豆瓣评分</th>

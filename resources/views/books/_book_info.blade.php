@@ -79,7 +79,7 @@
             <h4>
                 <a href="{{ route('users.show', $book->user_id) }}" target="_blank">
                 <label class="label label-info" data-toggle="tooltip" data-placement="top" title="当前保管者">
-                    <i class="fa fa-user"></i> {{ $book->getKeeper()->name }}
+                    <i class="fa fa-user"></i> {{ $book->Keeper->name }}
                 </label>
                 </a>
             </h4>

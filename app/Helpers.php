@@ -198,3 +198,8 @@ function domain_from_url($url)
     $parse = parse_url($url);
     return $parse['host'];
 }
+
+//yunyou - custom
+function colorful_label($style , $para){
+    return '<span class="label label-'.$style.'">'.$para.'</span>';
+}

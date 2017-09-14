@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration
             $table->date('pub_date')->comment('出版日期');
             $table->decimal('price', 6, 2)->default(0);
             $table->integer('total')->default(1)->comment('书本总数');
-            $table->integer('remain_num')->comment('剩余数量');
+            $table->integer('remain_num')->default(1)->comment('剩余数量');
             $table->decimal('douban_score', 2, 1)->default(0)->comment('豆瓣评分');
             $table->text('note')->nullable()->comment('备注');
             $table->text('description')->nullable()->comment('内容描述');

@@ -20,7 +20,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fs-navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="{{ route('books.index') }}">藏书</a></li>
+          <li><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
+          <li><a href="{{ route('books.index') }}"><i class="fa fa-comments-o"></i> 社区</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::check())

@@ -393,7 +393,7 @@ class ValhallaTableSeeder extends Seeder
                     'position' => '科技部部长',
                     'department' => 3,
                     'user_id' => null,
-                    'description' => '根据某不知名算法计算，<b>章鱼</b>同学月零花钱大概在两千万左右。<br>章鱼：“让开，鸡儿最多的社员来了。”',
+                    'description' => '“让开，鸡儿最多的社员来了。”<br>根据某不知名算法计算，<b>章鱼</b>同学月零花钱大概在两千万左右。',
                 ),
             38 =>
                 array(
@@ -451,7 +451,7 @@ class ValhallaTableSeeder extends Seeder
             		'id' => 44,
             		'year' => 2014,
             		'name' => '周晓贤',
-            		'position' => '吃土分部部长',
+            		'position' => '某吃土分部部长',
             		'department' => 0,
             		'user_id' => null,
             		'description' => '“你们早晚都要被我绝版”',

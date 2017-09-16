@@ -200,6 +200,7 @@ function domain_from_url($url)
 }
 
 //yunyou - custom
+//生成彩色标签
 function colorful_label($style , $para){
     return '<span class="label label-'.$style.'">'.$para.'</span>';
 }

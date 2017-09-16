@@ -45,12 +45,13 @@ class UsersTableSeeder extends Seeder
         //FantasyStar官方账号
         $star = User::find(2);
         $star->name = '幻星科幻协会';
-        $user->email = 'fantasystar@elpsy.cn';
-        $user->password = bcrypt('yunyou');
+        $star->email = 'fantasystar@elpsy.cn';
+        $star->password = bcrypt('fantasystar42');
         $star->city = '上海市浦东新区';
         $star->verified = 1;
         $star->identity = '社团官方账号';
-        $user->introduction = '我们的征途是星辰大海！';
+        $star->introduction = '我们的征途是星辰大海！';
+        $star->save();
 
     }
 }

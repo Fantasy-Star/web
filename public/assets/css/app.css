@@ -8405,6 +8405,14 @@ hr {
   margin-bottom: 10px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
 /* navbar */
 
 .navbar-default {

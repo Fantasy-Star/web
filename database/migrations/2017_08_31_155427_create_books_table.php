@@ -30,7 +30,7 @@ class CreateBooksTable extends Migration
             $table->integer('cid')->default(0)->comment('种类');
             $table->string('tags')->nullable()->comment('标签');
             $table->string('book_pic')->nullable()->comment('封面图片');
-            $table->integer('user_id')->comment('当前保管者');
+            $table->integer('user_id')->default(2)->comment('当前保管者');
             $table->timestamps();
         });
     }

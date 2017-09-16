@@ -56,7 +56,7 @@
 
                     @if($hero->description)
                         <div class="well" style="margin-bottom: 0px;padding: 10px;">
-                            {{{ $hero->description }}}
+                            <?php echo $hero->description; ?>
                         </div>
                     @endif
 

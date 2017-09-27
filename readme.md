@@ -1,12 +1,13 @@
 > ## Welcome to FantasyStar
-## 幻星科幻协会 <http://fantasystar.yunyoujun.cn>
+## 幻星科幻协会 - Fantasy Star Association
 
 ---
 
 > ## Introduce
  
 - Base on Laravel 5.5.
-- Test Address <http://association.yunyoujun.cn>
+- Old Address <http://fantasystar.yunyoujun.cn>
+- New Test Address <http://association.yunyoujun.cn>
 
     A website about science society association.
 

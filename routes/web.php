@@ -69,5 +69,8 @@ Route::get('/users/{id}/edit_avatar', 'UserController@editAvatar')->name('users.
 //******* 藏书 *******
 Route::resource('books', 'BooksController');
 
+Route::post('/books/order/{book}', 'BorrowController@store')->name('borrow.store');
+Route::delete('/books/order/{book}', 'BorrowController@destroy')->name('borrow.destroy');
+
 //*******后台管理*******
 //app/Admin/routes

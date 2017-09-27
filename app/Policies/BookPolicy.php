@@ -29,4 +29,9 @@ class BookPolicy
     {
         return $currentUser->is_admin;
     }
+
+    public function order(User $currentUser, Book $book)
+    {
+        return $currentUser->verified;
+    }
 }

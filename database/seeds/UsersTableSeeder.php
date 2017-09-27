@@ -53,5 +53,16 @@ class UsersTableSeeder extends Seeder
         $star->introduction = '我们的征途是星辰大海！';
         $star->save();
 
+        //宾客测试账号
+        $star = User::find(3);
+        $star->name = '测试账号';
+        $star->email = 'test@yunyoujun.cn';
+        $star->password = bcrypt('yunyou');
+        $star->city = '上海市浦东新区';
+        $star->verified = 0;
+        $star->identity = '测试账号';
+        $star->introduction = '御坂妹妹20001号';
+        $star->save();
+
     }
 }

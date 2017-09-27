@@ -35,4 +35,14 @@ class BooksController extends Controller
         session()->flash('success', '成功删除该书！');
         return back();
     }
+
+    public function order(Book $book)
+    {
+        $this->authorize('order', $book);
+        if (!Auth::user()->isOrdering($book->id)) {
+            Auth::user()->order($book->id);
+            session()->flash('success', '已成功预约本书！');
+        }
+        return redirect()->route('books.show', $book->id);
+    }
 }

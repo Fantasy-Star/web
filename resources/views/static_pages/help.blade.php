@@ -18,7 +18,7 @@
         </div>
         <div id="identiy" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            目前只是我自己的初步设想啦，直接通过支付宝转账交社费打备注，然后网站后台对用户的身份进行认证。
+            目前只是我自己的初步设想啦，全部线上交♂易♀。
             <br>
             不过貌似不大可能实行。
             <br>
@@ -92,17 +92,6 @@
     </div>
   </div>
 
-  <!--PC和WAP自适应版-->
-  <div class="panel panel-default col-md-12">
-    <div id="SOHUCS" sid="help" ></div>
-  </div>
-  <script type="text/javascript">
-      (function(){
-          var appid = 'cytcmrKfy';
-          var conf = 'prod_c166102c81bde2ffeca0f02bbb4d6957';
-          var width = window.innerWidth || document.documentElement.clientWidth;
-          if (width < 960) {
-              window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-  </script>
+  @include('plugins.changyan', ['sid' => 'help'])
 
 @stop

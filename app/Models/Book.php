@@ -28,4 +28,11 @@ class Book extends Model
         }
         echo $score;
     }
+
+//    被多个用户预约
+    public function isOrdereds()
+    {
+        return $this->belongsToMany(User::Class, 'book_order', 'book_id', 'user_id')->withTimestamps();
+    }
+
 }

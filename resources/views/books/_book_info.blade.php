@@ -84,9 +84,7 @@
             </div>
         </div>
 
-        @if (Auth::check())
-            @include('books._borrow_form')
-        @endif
+        @include('books._borrow_form')
 
         <h3 class="text-center">内容简介</h3>
         <div class="well well-lg">{{ $book->description }}</div>

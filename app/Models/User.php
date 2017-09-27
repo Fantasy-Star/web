@@ -84,12 +84,12 @@ class User extends Authenticatable
 
     public function followers()
     {
-        return $this->belongsToMany(User::Class, 'followers', 'user_id', 'follower_id');
+        return $this->belongsToMany(User::Class, 'followers', 'user_id', 'follower_id')->withTimestamps();
     }
 
     public function followings()
     {
-        return $this->belongsToMany(User::Class, 'followers', 'follower_id', 'user_id');
+        return $this->belongsToMany(User::Class, 'followers', 'follower_id', 'user_id')->withTimestamps();
     }
 
     public function follow($user_ids)
@@ -134,5 +134,32 @@ class User extends Authenticatable
         }
 
         return self::departments;
+    }
+
+    // 对书本预定
+    public function orderings()
+    {
+        return $this->belongsToMany(Book::Class, 'book_order', 'user_id', 'book_id')->withTimestamps();
+    }
+    //判断是否在自己已经预定的图书列表上
+    public function isOrdering($book_id)
+    {
+        return $this->orderings->contains($book_id);
+    }
+
+    public function order($book_ids)
+    {
+        if (!is_array($book_ids)) {
+            $book_ids = compact('book_ids');
+        }
+        $this->orderings()->sync($book_ids);
+    }
+
+    public function unorder($book_ids)
+    {
+        if (!is_array($book_ids)) {
+            $book_ids = compact('book_ids');
+        }
+        $this->orderings()->detach($book_ids);
     }
 }

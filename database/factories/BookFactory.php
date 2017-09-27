@@ -15,7 +15,7 @@ $factory->define(App\Models\Book::class, function (Faker $faker) {
         'douban_score' => $faker->randomDigit,
         'note' => $faker->text,
         'description' => $faker->text,
-        'user_id' => $faker->randomDigit,
+//        'user_id' => $faker->randomDigit,
         'created_at' => $faker->dateTime(),
         'updated_at' => $faker->dateTime(),
     ];

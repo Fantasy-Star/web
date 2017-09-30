@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="keywords" content="幻星,fantasystar,幻星科幻协会,上海海事大学幻星科幻协会,科幻社团,科幻协会" />
+    <meta name="keywords" content="幻星,幻星科幻,fantasystar,幻星科幻协会,上海海事大学幻星科幻协会,科幻社团,科幻协会,fantasy-star" />
     <meta name="author" content="云游君" />
     <meta name="description" content="@section('description') Fantasy Star - 幻星科幻协会 是上海海事大学唯一的科幻协会，致力于推广校园科幻文化。 @show" />
 
-    <title>@yield('title', 'Fantasy Star') - FantasyStar</title>
+    <title>@yield('title', 'Fantasy Star') | FantasyStar</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
     <link rel="Bookmark" href="/favicon.ico" >
@@ -51,5 +51,6 @@
         }
         browserRedirect();
     </script>
+    @yield('scripts')
   </body>
 </html>

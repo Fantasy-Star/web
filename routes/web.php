@@ -36,6 +36,11 @@ Route::get('/advice', 'StaticPagesController@advice')->name('advice');
 //******* 用户 *******
 Route::resource('users', 'UserController');
 
+//消息
+Route::get('/notifications/unread', 'NotificationsController@unread')->name('notifications.unread');
+Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
+Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
+
 // 注册
 Route::get('signup', 'UserController@create')->name('signup');
 Route::get('signup/confirm/{token}', 'UserController@confirmEmail')->name('confirm_email');
@@ -71,6 +76,25 @@ Route::resource('books', 'BooksController');
 
 Route::post('/books/order/{book}', 'BorrowController@store')->name('borrow.store');
 Route::delete('/books/order/{book}', 'BorrowController@destroy')->name('borrow.destroy');
+
+// Article
+Route::get("/articles/create", "ArticleController@create")->name('articles.create');
+Route::post("/articles", "ArticleController@store")->name('articles.store');
+Route::get("/articles/{id}/edit", "ArticleController@edit")->name('articles.edit');
+
+# ------------------ Topic ------------------------
+Route::get('/topics', 'TopicsController@index')->name('topics.index');
+Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
+Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
+Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
+Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
+Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
+Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
+
+# ------------------ ShareLinks --------------------
+
+Route::get('/links/share', 'ShareLinksController@createLink')->name('share_links.create');
+Route::get('/share_links/{id}/edit', 'ShareLinksController@edit')->name('share_links.edit');
 
 //*******后台管理*******
 //app/Admin/routes

@@ -20,7 +20,7 @@ class BorrowController extends Controller
         if (!Auth::user()->isOrdering($book->id)) {
             Auth::user()->order($book->id);
         }
-
+        session()->flash('success', '已成功预约本书！');
         return redirect()->route('books.show', $book->id);
     }
 
@@ -29,7 +29,7 @@ class BorrowController extends Controller
         if (Auth::user()->isOrdering($book->id)) {
             Auth::user()->unorder($book->id);
         }
-
+        session()->flash('danger', '已取消预约本书！');
         return redirect()->route('books.show', $book->id);
     }
 }

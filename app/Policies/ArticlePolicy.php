@@ -2,11 +2,12 @@
 
 namespace App\Policies;
 
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Models\User;
-use App\Models\Book;
+use App\Models\Article;
 
-class BookPolicy
+class ArticlePolicy
 {
     use HandlesAuthorization;
 
@@ -18,16 +19,6 @@ class BookPolicy
     public function __construct()
     {
         //
-    }
-
-    public function update(User $currentUser)
-    {
-        return $currentUser->is_admin;
-    }
-
-    public function destroy(User $currentUser)
-    {
-        return $currentUser->is_admin;
     }
 
 }

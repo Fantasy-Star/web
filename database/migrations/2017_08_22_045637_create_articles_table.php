@@ -15,6 +15,15 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title')->index();
+            $table->text('body');
+            $table->text('body_original')->nullable();
+            $table->integer('user_id')->unsigned()->default(0)->index();
+            $table->integer('category_id')->unsigned()->default(0)->index();
+            $table->integer('praise_count')->default(0)->index();
+            $table->enum('is_original', ['yes',  'no'])->default('yes')->index()->comment('是否原创');
+            $table->enum('is_excellent', ['yes',  'no'])->default('no')->index();
+            $table->decimal('score', 2, 1)->default(0)->comment('评分');
             $table->timestamps();
         });
     }

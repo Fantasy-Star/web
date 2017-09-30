@@ -20,12 +20,37 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fs-navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
-          <li><a href="{{ route('books.index') }}"><i class="fa fa-comments-o"></i> 社区</a></li>
+          <li class="{{ navViewActive('books.index') }}"><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
+          <li><a href="{{ route('books.index') }}"><i class="fa fa-bookmark"></i> 文章</a></li>
+          <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="开发ing…" ><i class="fa fa-comments-o"></i> 社区</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::check())
-            <li><a href="{{ route('users.index') }}">成员</a></li>
+            <li>
+              <a href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <i class="fa fa-plus"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li>
+                  <a class="button no-pjax" href="{{ route('articles.create') }}" >
+                    <i class="fa fa-paint-brush text-md"></i> 创作文章
+                  </a>
+                </li>
+
+                <li>
+                  <a class="button no-pjax" href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}">
+                    <i class="fa fa-comment text-md"></i> 发起讨论
+                  </a>
+                </li>
+                <li>
+                  <a class="button no-pjax" href="{{ route('share_links.create') }}">
+                    <i class="fa fa-link text-md"></i> 分享链接
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="{{ navViewActive('users.index') }}"><a href="{{ route('users.index') }}">成员</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img class="img-circle" alt="Summer" src="{{ Auth::user()->gravatar('20') }}" />
@@ -45,6 +70,14 @@
                   </a>
                 </li>
               </ul>
+            </li>
+
+            <li>
+              <a href="{{ route('notifications.unread') }}" class="text-warning">
+                      <span class="badge badge-{{ Auth::user()->notification_count + Auth::user()->message_count > 0 ? 'important' : 'fade' }}" title="消息" data-toggle="tooltip" data-placement="bottom" id="notification-count">
+                          {{ Auth::user()->notification_count + Auth::user()->message_count }}
+                      </span>
+              </a>
             </li>
           @else
             <li><a href="{{ route('login') }}">登录</a></li>

@@ -72,6 +72,11 @@ class User extends Authenticatable
         return $this->hasMany(Status::class);
     }
 
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 //    关注的用户 所发布的状态
     public function feed()
     {

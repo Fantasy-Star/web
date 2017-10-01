@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="fs-navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="{{ navViewActive('books.index') }}"><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
-          <li><a href="{{ route('books.index') }}"><i class="fa fa-bookmark"></i> 文章</a></li>
+          <li class="{{ navViewActive('articles.index') }}"><a href="{{ route('articles.index') }}"><i class="fa fa-bookmark"></i> 文章</a></li>
           <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="开发ing…" ><i class="fa fa-comments-o"></i> 社区</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

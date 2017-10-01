@@ -17,6 +17,7 @@ class BooksController extends Controller
         ]);
 
     }
+
     public function index()
     {
         $books = Book::with('Keeper')->paginate(10);

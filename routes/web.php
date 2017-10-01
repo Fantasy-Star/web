@@ -78,9 +78,7 @@ Route::post('/books/order/{book}', 'BorrowController@store')->name('borrow.store
 Route::delete('/books/order/{book}', 'BorrowController@destroy')->name('borrow.destroy');
 
 // Article
-Route::get("/articles/create", "ArticleController@create")->name('articles.create');
-Route::post("/articles", "ArticleController@store")->name('articles.store');
-Route::get("/articles/{id}/edit", "ArticleController@edit")->name('articles.edit');
+Route::resource('articles', 'ArticlesController');
 
 # ------------------ Topic ------------------------
 Route::get('/topics', 'TopicsController@index')->name('topics.index');

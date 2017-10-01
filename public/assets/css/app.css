@@ -8615,6 +8615,10 @@ section.user_info h1 {
   color: #fff;
 }
 
+.article-info {
+  border-left: 1px rgba(66, 66, 66, 0.5) solid;
+}
+
 /* universal */
 
 body {

@@ -24,8 +24,8 @@
                             </a>
                         </h4>
                         <hr style="margin:5px;">
-                        <div style="width:150px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
-                            {{ $article->body }}
+                        <div style="width:150px;height: 50px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
+                            {!! $article->body !!}
                         </div>
                     </div>
                     <hr style="margin:5px;">

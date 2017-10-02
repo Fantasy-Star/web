@@ -46,8 +46,8 @@ class StoreArticleRequest extends FormRequest
             {
 //              $article = Article::findOrFail($this->route('id'));
                 return [
-                    'title'       => 'required|min:2',
-                    'body'        => 'min:2',
+                    'title'       => 'required',
+                    'body'        => 'required',
 //                    'category_id' => 'required|numeric',
                 ];
             }

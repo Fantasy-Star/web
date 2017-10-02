@@ -5,7 +5,7 @@
   @if (Auth::check())
     <div class="row">
       <aside class="col-md-3">
-        <div class="element-panel">
+        <div class="panel panel-default">
           <section class="user_info">
             @include('shared._user_info', ['user' => Auth::user()])
           </section>
@@ -15,7 +15,7 @@
         </div>
       </aside>
       <aside class="col-md-9">
-        <div class="element-panel">
+        <div class="panel panel-default">
           <section class="status_form">
             @include('shared._status_form')
           </section>

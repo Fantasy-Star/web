@@ -156,6 +156,8 @@ return [
         'weibo_link'            => '微博链接',
         'tel'                   => '手机号',
         'personal_website'      => '个人网站',
+
+        'body'                  => '内容',
     ],
 
 ];

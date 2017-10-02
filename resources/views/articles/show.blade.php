@@ -1,36 +1,40 @@
 @extends('layouts.default')
 
 @section('title')
-    {{ $article->title }} | @parent
+    {{ $article->title }} @parent
 @stop
 
 @section('content')
 
     <div class="col-md-9">
 
-        <div class="panel article-body content-body">
+        <div class="panel panel-default">
 
+            <h2 class="panel-heading text-center">
+                {{ $article->title }}
+            </h2>
+            <div class="text-center">
+                    <span class="label label-primary" data-toggle="tooltip" title="浏览数">
+                        <i class="glyphicon glyphicon-eye-open"></i> {{ $article->view_count }}
+                    </span>
+                &nbsp;
+                <span class="label label-success" data-toggle="tooltip" title="点赞数">
+                        <i class="glyphicon glyphicon-thumbs-up"></i> {{ $article->praise_count }}
+                    </span>
+                &nbsp;
+                <span class="label label-info" data-toggle="tooltip" title="评论数">
+                        <i class="glyphicon glyphicon-comment"></i> {{ $article->reply_count }}
+                    </span>
+                &nbsp;
+                <span class="label label-default" data-toggle="tooltip" title="发布时间">
+                        <i class="glyphicon glyphicon-time"></i> {{ $article->created_at }}
+                </span>
+            </div>
             <div class="panel-body">
-
-                <h1 class="text-center">
-                    {{ $article->title }}
-                </h1>
-
-                <div class="article-meta text-center">
-                    <i class="glyphicon glyphicon-time"></i> {{ $article->created_at }}
-                    ·
-                    <i class="glyphicon glyphicon-eye"></i> {{ $article->view_count }}
-                    ·
-                    <i class="glyphicon glyphicon-thumbs-up"></i> {{ $article->praise_count }}
-                    ·
-                    <i class="glyphicon glyphicon-comment"></i> {{ $article->reply_count }}
-                </div>
-
-                <div class="entry-content">
-                    {!! $article->body !!}
-                </div>
-
-{{--                @include('topics.partials.topic_operate', ['is_article' => true, 'manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])--}}
+                <hr>
+                {!! $article->body !!}
+                <hr>
+                @include('articles.partials._operate')
             </div>
 
         </div>
@@ -38,16 +42,18 @@
     </div>
 
     <div class="col-md-3">
-        <div class="panel panel-default corner-radius">
-            <section class="user_info">
-                @include('shared._user_info', ['user' => Auth::user()])
-            </section>
+        <div class="panel panel-default">
             <div class="panel-heading text-center">
-                {{--<h3 class="panel-title">作者：{{ $article->user->name }}</h3>--}}
+                <section class="user_info">
+                    @include('shared._user_info', ['user' => $user])
+                </section>
+                <section class="stats">
+                    @include('shared._stats', ['user' => $user])
+                </section>
             </div>
-
             <div class="panel-body text-center">
-
+                @include('users.partials._follow')
+                @include('users.partials._about')
             </div>
         </div>
     </div>

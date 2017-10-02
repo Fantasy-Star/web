@@ -22,9 +22,7 @@
                 <img src="{{ $user->gravatar('200') }}" alt="{{ $user->name }}" class="gravatar box-shadow"/>
               </a>
             </div>
-              <h5 class="text-center">
 
-              </h5>
               <h4 class="text-center">
                   <span class="label label-{{ $user->verified == 0 ? 'default' : 'success' }}">
                       {{ $user->verified == 0 ? '未认证' : '已认证 - '.$user->identity }}

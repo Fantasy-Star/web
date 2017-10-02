@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    文章 | @parent
+    文章 @parent
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
         @if ( ! $articles->isEmpty())
 
         <div >
-            <div class="panel-body remove-padding-horizontal">
+            <div class="panel-body">
                 @include('articles.partials.articles')
             </div>
 

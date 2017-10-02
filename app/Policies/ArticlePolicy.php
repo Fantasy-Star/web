@@ -2,7 +2,6 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Models\User;
 use App\Models\Article;
@@ -19,6 +18,21 @@ class ArticlePolicy
     public function __construct()
     {
         //
+    }
+
+    public function update(User $user, Article $article)
+    {
+        return $user->is_admin || $user->id == $article->user_id;
+    }
+
+    public function edit(User $user, Article $article)
+    {
+        return $user->is_admin || $user->id == $article->user_id;
+    }
+
+    public function destroy(User $user, Article $article)
+    {
+        return $user->is_admin || $user->id == $article->user_id;
     }
 
 }

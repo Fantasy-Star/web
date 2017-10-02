@@ -11,6 +11,7 @@
             <h2 class="text-center page-header"><i class="fa fa-pencil"></i> {{ $article->id > 0 ? '编辑文章' : '创作文章' }}</h2>
 
             <div class="panel-body">
+                @include('shared._errors')
                 @if ($article->id > 0)
                     <form method="POST" action="{{ route('articles.update', $article->id) }}" accept-charset="UTF-8" id="article-edit-form">
                         <input name="_method" type="hidden" value="PATCH">
@@ -37,7 +38,7 @@
 
                         <div class="form-group">
                              <textarea name="body" id="article_editor" rows="10" cols="80">
-                                    {{ old('title') ?: $article->title }}
+                                    {{ old('body') ?: $article->body }}
                             </textarea>
                             <script>
                                 // Replace the <textarea id="editor1"> with a CKEditor
@@ -46,11 +47,20 @@
                             </script>
                         </div>
 
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit">
-                                <i class="fa fa-pencil-square-o"></i> {{ lang('Publish') }}
-                            </button>
-                        </div>
+                        @if ($article->id > 0)
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit">
+                                    <i class="fa fa-pencil-square-o"></i> 更新
+                                </button>
+                            </div>
+                        @else
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit">
+                                    <i class="fa fa-pencil-square-o"></i> {{ lang('Publish') }}
+                                </button>
+                            </div>
+                        @endif
+
 
                     </form>
             </div>

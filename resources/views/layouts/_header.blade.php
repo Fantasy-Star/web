@@ -20,13 +20,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fs-navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="{{ navViewActive('books.index') }}"><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
-          <li class="{{ navViewActive('articles.index') }}"><a href="{{ route('articles.index') }}"><i class="fa fa-bookmark"></i> 文章</a></li>
-          <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="开发ing…" ><i class="fa fa-comments-o"></i> 社区</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+          <li class="{{ navViewActive('books.index') }}" style="display: inline-block;"><a href="{{ route('books.index') }}"><i class="fa fa-book"></i> 藏书</a></li>
+          <li class="{{ navViewActive('articles.index') }}" style="display: inline-block;"><a href="{{ route('articles.index') }}"><i class="fa fa-bookmark"></i> 文章</a></li>
           @if (Auth::check())
-            <li>
+          <li class="{{ navViewActive('users.index') }}" style="display: inline-block;"><a href="{{ route('users.index') }}"><i class="fa fa-user"></i> 成员</a></li>
+          @endif
+          <li style="display: inline-block;"><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="开发ing…" ><i class="fa fa-comments-o"></i> 社区</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" style="text-align: right;">
+          @if (Auth::check())
+            <li style="display: inline-block;">
               <a href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                 <i class="fa fa-plus"></i>
               </a>
@@ -50,8 +53,7 @@
               </ul>
             </li>
 
-            <li class="{{ navViewActive('users.index') }}"><a href="{{ route('users.index') }}">成员</a></li>
-            <li class="dropdown">
+            <li class="dropdown" style="display: inline-block;">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img class="img-circle" alt="Summer" src="{{ Auth::user()->gravatar('20') }}" />
                 {{ Auth::user()->name }} <b class="caret"></b>
@@ -72,7 +74,7 @@
               </ul>
             </li>
 
-            <li>
+            <li style="display: inline-block;">
               <a href="{{ route('notifications.unread') }}" class="text-warning">
                       <span class="badge badge-{{ Auth::user()->notification_count + Auth::user()->message_count > 0 ? 'important' : 'fade' }}" title="消息" data-toggle="tooltip" data-placement="bottom" id="notification-count">
                           {{ Auth::user()->notification_count + Auth::user()->message_count }}

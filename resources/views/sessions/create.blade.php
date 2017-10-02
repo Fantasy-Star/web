@@ -44,12 +44,21 @@
           </div>
         </div>
 
+        {{--<div class="form-group">--}}
+          {{--<div class="col-md-6 col-sm-6">--}}
+              {{--<button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 8px;">登&nbsp;录</button>--}}
+          {{--</div>--}}
+          {{--<div class="col-md-6 col-sm-6">--}}
+              {{--<a href="{{ route('signup') }}" class="btn btn-default btn-block btn-lg" style="margin-top: 8px;">注&nbsp;册</a>--}}
+          {{--</div>--}}
+        {{--</div>--}}
+
         <div class="form-group">
-          <div class="col-md-6 col-sm-6">
-              <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 8px;">登&nbsp;录</button>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 8px;">登&nbsp;录</button>
           </div>
-          <div class="col-md-6 col-sm-6">
-              <a href="{{ route('signup') }}" class="btn btn-default btn-block btn-lg" style="margin-top: 8px;">注&nbsp;册</a>
+          <div class="col-md-12">
+            <a href="{{ route('signup') }}" class="btn btn-default btn-block btn-lg" style="margin-top: 8px;">注&nbsp;册</a>
           </div>
         </div>
 

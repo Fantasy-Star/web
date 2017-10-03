@@ -9,7 +9,9 @@
     <div class="col-md-9">
 
         <div class="panel panel-default">
-
+            <span class="label label-{{ $article->is_original == 'yes' ? 'success' : 'default' }}">
+               {{ $article->is_original == 'yes' ? '原创' : '转载' }}
+            </span>
             <h2 class="panel-heading text-center">
                 {{ $article->title }}
             </h2>
@@ -32,12 +34,16 @@
             </div>
             <div class="panel-body">
                 <hr>
-                {!! $article->body !!}
+                <div style="padding: 20px;">
+                    {!! $article->body !!}
+                </div>
                 <hr>
                 @include('articles.partials._operate')
             </div>
 
         </div>
+
+        @include('plugins.changyan', ['sid' => 'article_'.$article->id])
 
     </div>
 

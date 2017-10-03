@@ -18,8 +18,8 @@ class CreateBooksTable extends Migration
             $table->string('name', 100)->comment('书本名称');
             $table->string('isbn')->nullable();
             $table->string('author')->nullable()->comment('作者');
-            $table->string('publisher')->comment('出版社');
-            $table->date('pub_date')->comment('出版日期');
+            $table->string('publisher')->nullable()->comment('出版社');
+            $table->date('pub_date')->nullable()->comment('出版日期');
             $table->decimal('price', 6, 2)->default(0);
             $table->integer('total')->default(1)->comment('书本总数');
             $table->integer('remain_num')->default(1)->comment('剩余数量');

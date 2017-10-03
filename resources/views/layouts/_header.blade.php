@@ -82,8 +82,8 @@
               </a>
             </li>
           @else
-            <li><a href="{{ route('login') }}">登录</a></li>
-            <li><a href="{{ route('signup') }}">注册</a></li>
+            <li style="display: inline-block;"><a href="{{ route('login') }}">登录</a></li>
+            <li style="display: inline-block;"><a href="{{ route('signup') }}">注册</a></li>
           @endif
         </ul>
       </div><!-- /.navbar-collapse -->

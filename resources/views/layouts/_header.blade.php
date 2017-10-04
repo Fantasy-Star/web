@@ -33,21 +33,21 @@
               <a href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                 <i class="fa fa-plus"></i>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <ul class="dropdown-menu">
                 <li>
-                  <a class="button no-pjax" href="{{ route('articles.create') }}" >
-                    <i class="fa fa-paint-brush text-md"></i> 创作文章
+                  <a class="button btn-default" href="{{ route('articles.create') }}" >
+                    <i class="fa fa-paint-brush"></i> 创作文章
                   </a>
                 </li>
 
                 <li>
-                  <a class="button no-pjax" href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}">
-                    <i class="fa fa-comment text-md"></i> 发起讨论
+                  <a class="button btn-default" href="{{ route('topics.create') }}">
+                    <i class="fa fa-comment"></i> 发起讨论
                   </a>
                 </li>
                 <li>
-                  <a class="button no-pjax" href="{{ route('share_links.create') }}">
-                    <i class="fa fa-link text-md"></i> 分享链接
+                  <a class="button btn-default" href="{{ route('share_links.create') }}">
+                    <i class="fa fa-link"></i> 分享链接
                   </a>
                 </li>
               </ul>

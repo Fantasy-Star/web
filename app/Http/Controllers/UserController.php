@@ -68,8 +68,9 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = User::findOrFail($id);
         $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }

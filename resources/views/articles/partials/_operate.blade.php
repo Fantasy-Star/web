@@ -8,7 +8,7 @@
         <a class="btn btn-sm btn-primary" href="{{ route('articles.edit', [$article->id]) }}" title="编辑文章" data-toggle="tooltip">
             <i class="glyphicon glyphicon-edit"></i>
         </a>
-        </form>
+        <form>
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <button type="submit" class="btn btn-sm btn-danger" title="删除文章" data-toggle="tooltip">

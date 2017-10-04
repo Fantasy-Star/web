@@ -1,12 +1,23 @@
-<li>
-    <img src="{{ $user->gravatar('30') }}" alt="{{ $user->name }}" class="img-circle img-thumbnail"/>
-    <a href="{{ route('users.show', $user->id )}}" class="username">{{ $user->name }}</a>
+<div class="col-md-3">
+    <div class="panel panel-default text-center">
+        <section class="user_info">
+            @include('shared._user_info')
+        </section>
+        <div>
+        @can('edit', $user)
+            <a class="btn btn-sm btn-primary" title="编辑" href="{{ route('users.edit', $user->id) }}" class="display-inline">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+        @endcan
+        @can('destroy', $user)
+            <form action="{{ route('users.destroy', $user->id) }}" method="post" class="display-inline">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn btn-sm btn-danger" title="删除"><i class="glyphicon glyphicon-trash"></i></button>
+            </form>
+        @endcan
+        </div>
+    </div>
+</div>
 
-    @can('destroy', $user)
-      <form action="{{ route('users.destroy', $user->id) }}" method="post">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
-        <button type="submit" class="btn btn-sm btn-danger delete-btn" title="删除该用户"><i class="fa fa-trash"></i></button>
-      </form>
-    @endcan
-</li>
+

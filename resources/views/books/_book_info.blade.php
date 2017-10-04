@@ -87,6 +87,12 @@
         @include('books._borrow_form')
 
         <h3 class="text-center">内容简介</h3>
-        <div class="well well-lg">{{ $book->description }}</div>
+        <div class="well well-lg">
+            @if($book->description)
+                {{ $book->description }}
+            @else
+                暂无简介~
+            @endif
+        </div>
     </div>
 </div>

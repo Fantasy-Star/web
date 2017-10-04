@@ -5,8 +5,9 @@
   <div class="col-md-12 panel panel-default">
       @include('books._book_info', ['book' => $book])
   </div>
-</div>
 
   @include('plugins.changyan', ['sid' => 'book_comment_'.$book->id])
+
+</div>
 
 @stop

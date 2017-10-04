@@ -81,12 +81,7 @@ Route::delete('/books/order/{book}', 'BorrowController@destroy')->name('borrow.d
 Route::resource('articles', 'ArticlesController');
 
 # ------------------ Topic ------------------------
-Route::get('/topics', 'TopicsController@index')->name('topics.index');
-Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
-Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
-Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
-Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
-Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
+Route::resource('topics', 'TopicsController');
 Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
 
 # ------------------ ShareLinks --------------------

@@ -30,7 +30,7 @@
         <span class="text-success" data-toggle="tooltip" data-placement="top" title="微信号：QQ910426929"><strong>微信</strong></span>账号。
       <br>
         <div id="pay" class="text-center">
-          <div class="mb-10">
+          <div class="m-b-10">
             <button class="btn btn-primary" role="button" data-toggle="collapse" data-target="#alipay" data-parent="#pay">
                 支付宝收款二维码
             </button>

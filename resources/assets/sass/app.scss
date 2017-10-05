@@ -12,19 +12,18 @@
 @import "resources/assets/sass/fantasystar.scss";
 
 $navbar-color: #3c3e42;
-
+$gray-lighter: #ccc;
 /* universal */
 
 body {
-  padding-top: 70px;
+}
+
+.container{
+  margin-top: 70px;
 }
 
 section {
   overflow: auto;
-}
-
-textarea {
-  resize: vertical;
 }
 
 /* laravel default */

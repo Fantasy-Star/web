@@ -13,13 +13,13 @@
         <div class="panel-body">
             @include('shared._errors')
             @if ($topic->id > 0)
-                <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="article-edit-form">
+                <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8">
                     <input name="_method" type="hidden" value="PATCH">
-                    @else
-                        <form method="POST" action="{{ route('articles.store') }}" accept-charset="UTF-8" id="article-create-form">
-                            @endif
-                            {!! csrf_field() !!}
-                            <input name="category_id" type="hidden" value="1">
+            @else
+                <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8">
+            @endif
+                    {!! csrf_field() !!}
+                    <input name="category_id" type="hidden" value="1">
 
                             <div class="form-group">
                                 <input class="form-control" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $article->title }}" required="require">

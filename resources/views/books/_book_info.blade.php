@@ -14,7 +14,7 @@
     </h4>
     <div class="form-horizontal">
         <div class="gravatar_edit">
-            <img src="{{ $book->book_pic }}" alt="《{{ $book->name }}》还没有封面……" class="img-thumbnail box-shadow mt-20"/>
+            <img src="{{ $book->book_pic }}" alt="《{{ $book->name }}》还没有封面……" class="img-thumbnail box-shadow m-t-20"/>
         </div>
         <div class="form-group text-center">
             <div class="col-sm-6 col-md-3">

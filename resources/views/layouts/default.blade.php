@@ -15,13 +15,19 @@
     <link rel="Bookmark" href="/favicon.ico" >
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"> -->
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/fantasystar.css">
+    <script src="{{ asset('/assets/js/lib/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/bootstrap.min.js') }}"></script>
   </head>
   <body>
+    <script src="{{ asset('/assets/js/lib/three.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/dot/dots.js') }}"></script>
     @include('layouts._header')
 
-    <div class="container">
+    <div class="main container">
         @include('shared._messages')
         @yield('content')
     </div>
@@ -29,6 +35,7 @@
     @include('layouts._footer')
 
     <script src="{{ asset('/assets/js/app.js') }}"></script>
+    <script src="{{ asset('/assets/js/fantasystar.js') }}"></script>
     <script type="text/javascript">
         function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();

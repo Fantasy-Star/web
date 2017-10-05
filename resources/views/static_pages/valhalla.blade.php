@@ -28,10 +28,10 @@
                 <div class="media-left text-center">
                     @if($hero->user_id)
                         <a href="{{ route('users.show', $hero->user_id) }}" {{ $hero->user_id ? 'style="underline:none;"':'' }}>
-                            <img src="{{ $hero->getHeroInfo()->gravatar() }}}" alt="{{ $hero->name }}" class="img-thumbnail gravatar mb-10"/>
+                            <img src="{{ $hero->getHeroInfo()->gravatar() }}}" alt="{{ $hero->name }}" class="img-thumbnail gravatar m-b-10"/>
                         </a>
                     @else
-                        <img src="http://www.gravatar.com/avatar/" class="img-thumbnail gravatar mb-10">
+                        <img src="http://www.gravatar.com/avatar/" class="img-thumbnail gravatar m-b-10">
                     @endif
 
                     <a class="label label-primary" href="{{ $hero->user_id ? route('users.show', [$hero->user_id]) : 'javascript:;' }}"
@@ -40,7 +40,7 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <div class="media-heading mb-10">
+                    <div class="media-heading m-b-10">
                         <span class="label label-success">
                             {{ $hero->year }}
                         </span> &nbsp;

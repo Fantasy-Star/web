@@ -37,6 +37,7 @@
         <li>云服务器： 阿里云 Linux Ubuntu 16.0.4</li>
         <li>数据库： MariaDB 10.1.23</li>
         <li>社会化评论：搜狐-畅言</li>
+        <li>在线编辑器：ckeditor</li>
       </ul>
     </blockquote>
     </p>

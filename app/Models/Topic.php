@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Topic extends Model
 {
-    public $timestamps = false;
-
     protected $keepRevisionOf = [
         'deleted_at',
         'is_excellent',
@@ -15,7 +14,6 @@ class Topic extends Model
         'order',
     ];
 
-    use SearchableTrait;
     protected $searchable = [
         'columns' => [
             'topics.title' => 10,
@@ -44,10 +42,6 @@ class Topic extends Model
     public static function boot()
     {
         parent::boot();
-
-        static::created(function ($topic) {
-            SiteStatus::newTopic();
-        });
 
         static::deleted(function ($topic) {
             foreach ($topic->replies as $reply) {
@@ -119,11 +113,6 @@ class Topic extends Model
         $query = ($order == 'vote_count') ? $query->orderBy('vote_count', 'desc') : $query->orderBy('created_at', 'asc');
 
         return $query->paginate($limit, ['*'], $pageName, $latest_page);
-    }
-
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = (new AutoCorrect)->convert($value);
     }
 
     public function scopeByWhom($query, $user_id)

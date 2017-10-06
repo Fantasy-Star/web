@@ -31,17 +31,17 @@
       <h1>Hello , Fantasy Star !</h1>
 
       <p class="lead">
-        <h3 class="m-b-md">
+        <h3 class="m-b-30">
             <a href="{{ route('about') }}" data-toggle="tooltip" data-placement="bottom" title="关于我们">幻星科幻协会 - Fantasy Star</a>
         </h3>
-        <div class="links m-b-md">
+        <div class="links m-b-10">
             <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">小说部</a>
             <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">电影部</a>
             <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">科技部</a>
             <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">外联部</a>
             <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="还没有写简介~">行政部</a>
         </div>
-        <div class="m-b-md">
+        <div class="m-b-30">
             <ul class="list-inline">
                 <li><a href="mailto:fantasystar@elpsy.cn" target="_blank" data-toggle="tooltip" data-placement="top" title="反馈邮箱：fantasystar@elpsy.cn"><i class="fa fa-envelope"></i></a></li>
                 <li><a href="http://weibo.com/u/3784345967?refer_flag=1001030102_&is_all=1" target="_blank" data-toggle="tooltip" data-placement="top" title="微博：上海海事大学幻星科幻协会"><i class="fa fa-weibo"></i></a></li>

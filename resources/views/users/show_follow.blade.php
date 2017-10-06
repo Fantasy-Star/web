@@ -2,16 +2,11 @@
 @section('title', $title)
 
 @section('content')
-<div class="col-md-offset-1 col-md-10 element-panel">
-  <h1>{{ $title }}</h1>
-  <ul class="users">
+<div class="col-md-12">
+  <h1 class="page-header">{{ $title }}</h1>
     @foreach ($users as $user)
-      <li>
-        <img src="{{ $user->gravatar() }}" alt="{{ $user->name }}" class="gravatar"/>
-        <a href="{{ route('users.show', $user->id )}}" class="username">{{ $user->name }}</a>
-      </li>
+        @include('users._user')
     @endforeach
-  </ul>
   <div class="text-center">
     {!! $users->render() !!}
   </div>

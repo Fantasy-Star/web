@@ -22,32 +22,35 @@
                     <input name="category_id" type="hidden" value="1">
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $article->title }}" required="require">
+                                <input class="form-control" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">
                             </div>
 
                             <div class="form-group">
                                 <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                        <input type="radio" name="is_original" value="yes" autocomplete="off" checked> 原创
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="is_original" value="no" autocomplete="off"> 转载
-                                    </label>
+                                    @foreach ($categories as $category)
+                                        @can('publish',$category)
+                                        <label class="btn btn-primary {{ $category->id == config('fantasystar.simple_category_id') ? 'active':'' }}" data-toggle="tooltip" title="{{ $category->description }}">
+                                            <input type="radio" name="category_id" value="{{ $category->id }}" autocomplete="off" checked>
+                                            {{ $category->name }}
+                                        </label>
+                                        @endcan
+                                    @endforeach
                                 </div>
+
                             </div>
 
                             <div class="form-group">
-                             <textarea name="body" id="article_editor" rows="10" cols="80">
-                                    {{ old('body') ?: $article->body }}
+                             <textarea name="body" id="topic_editor" rows="10" cols="80">
+                                    {{ old('body') ?: $topic->body }}
                             </textarea>
                                 <script>
                                     // Replace the <textarea id="editor1"> with a CKEditor
                                     // instance, using default configuration.
-                                    CKEDITOR.replace( 'article_editor' );
+                                    CKEDITOR.replace( 'topic_editor' );
                                 </script>
                             </div>
 
-                            @if ($article->id > 0)
+                            @if ($topic->id > 0)
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">
                                         <i class="fa fa-pencil-square-o"></i> 更新

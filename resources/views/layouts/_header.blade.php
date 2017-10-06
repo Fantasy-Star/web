@@ -25,7 +25,7 @@
           @if (Auth::check())
           <li class="{{ navViewActive('users.index') }}" style="display: inline-block;"><a href="{{ route('users.index') }}"><i class="fa fa-user"></i> 成员</a></li>
           @endif
-          <li style="display: inline-block;"><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="开发ing…" ><i class="fa fa-comments-o"></i> 社区</a></li>
+          <li class="{{ navViewActive('topics.index') }}" style="display: inline-block;"><a href="{{ route('topics.index') }}" data-toggle="tooltip" data-placement="bottom" title="社区" ><i class="fa fa-comments-o"></i> 社区</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="text-align: right;">
           @if (Auth::check())
@@ -76,7 +76,7 @@
 
             <li style="display: inline-block;">
               <a href="{{ route('notifications.unread') }}" class="text-warning">
-                      <span class="badge badge-{{ Auth::user()->notification_count + Auth::user()->message_count > 0 ? 'important' : 'fade' }}" title="消息" data-toggle="tooltip" data-placement="bottom" id="notification-count">
+                      <span class="badge badge-{{ Auth::user()->notification_count + Auth::user()->message_count > 0 ? 'important' : 'fade' }}" title="消息 - 开发ing……" data-toggle="tooltip" data-placement="bottom" id="notification-count">
                           {{ Auth::user()->notification_count + Auth::user()->message_count }}
                       </span>
               </a>

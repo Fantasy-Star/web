@@ -154,6 +154,10 @@ footer .slogon {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.panel-default > .panel-heading{
+  background-color: rgba(255,255,255,0.9);
+}
+
 .jumbotron {
   background-color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0px;

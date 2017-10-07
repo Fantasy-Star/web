@@ -29,12 +29,6 @@
 
 ---
 
-- ### Complete
-
-1.User Info
-
----
-
 - ### Intend
 1. Novel display
 2. Vote for product

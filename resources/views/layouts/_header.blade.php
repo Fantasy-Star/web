@@ -26,6 +26,7 @@
           <li class="{{ navViewActive('users.index') }}" style="display: inline-block;"><a href="{{ route('users.index') }}"><i class="fa fa-user"></i> 成员</a></li>
           @endif
           <li class="{{ navViewActive('topics.index') }}" style="display: inline-block;"><a href="{{ route('topics.index') }}" data-toggle="tooltip" data-placement="bottom" title="社区" ><i class="fa fa-comments-o"></i> 社区</a></li>
+          <li style="display: inline-block;"><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="幻星首家线上赌场还没上线啦！" ><i class="fa fa-diamond"></i> 赌场</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="text-align: right;">
           @if (Auth::check())

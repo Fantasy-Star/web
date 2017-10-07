@@ -19,7 +19,6 @@
                 <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8">
             @endif
                     {!! csrf_field() !!}
-                    <input name="category_id" type="hidden" value="1">
 
                             <div class="form-group">
                                 <input class="form-control" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">

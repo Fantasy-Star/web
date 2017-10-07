@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Topic;
 
 class StoreTopicRequest extends FormRequest
 {
@@ -37,17 +38,28 @@ class StoreTopicRequest extends FormRequest
                     'title'       => 'required',
                     'body'        => 'required',
                     'category_id' => 'required|numeric',
+                    'link'        => 'url|unique:share_links',
                 ];
             }
             // UPDATE
             case 'PUT':
             case 'PATCH':
             {
-                return [
-                    'title'       => 'required',
-                    'body'        => 'required',
-                    'category_id' => 'required|numeric',
-                ];
+                $topic = Topic::findOrFail($this->route('id'));
+                if ($topic->isShareLink()) {
+                    return [
+                        'title'       => 'required',
+                        'body'        => 'required',
+                        'category_id' => 'required|numeric',
+                        'link'        => 'url|unique:share_links,link,' . $topic->share_link->id,
+                    ];
+                } else {
+                    return [
+                        'title'       => 'required',
+                        'body'        => 'required',
+                        'category_id' => 'required|numeric',
+                    ];
+                }
             }
             default:break;
         }

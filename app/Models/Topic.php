@@ -43,11 +43,11 @@ class Topic extends Model
     {
         parent::boot();
 
-        static::deleted(function ($topic) {
-            foreach ($topic->replies as $reply) {
-                app(UserRepliedTopic::class)->remove($reply->user, $reply);
-            }
-        });
+//        static::deleted(function ($topic) {
+//            foreach ($topic->replies as $reply) {
+//                app(UserRepliedTopic::class)->remove($reply->user, $reply);
+//            }
+//        });
     }
 
     public function share_link()
@@ -135,13 +135,9 @@ class Topic extends Model
         return $query->orderBy('created_at', 'desc');
     }
 
-    public function isArticle()
-    {
-        return $this->category_id == config('phphub.blog_category_id');
-    }
-
     public function isShareLink()
     {
-        return $this->category_id == config('phphub.hunt_category_id');
+        return $this->category_id == config('fantasystar.share_category_id');
     }
+
 }

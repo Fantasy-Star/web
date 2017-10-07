@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\Category;
+use App\Models\ShareLink;
 use App\Http\Requests\StoreTopicRequest;
 use Auth;
 use Flash;
@@ -34,8 +35,24 @@ class TopicsController extends Controller
     {
         $data = $request->except('_token');
         $data['user_id'] = Auth::id();
+        $msg = '话题发布成功！';
+
+        if ($data['category_id'] == config('fantasystar.share_category_id')) {
+            $a = '<a class="label label-info" href=" ' . $data['link'] . ' "> ' . $data['link'] . ' </a>';
+            $data['body'] = colorful_label('primary','分享链接') . ' ' . $a . "<br><hr>" . $data['body'];
+            $msg = '链接分享成功！';
+        }
+
         $topic = Topic::create($data);
-        session()->flash('success', '话题发布成功！');
+
+        if($topic->isShareLink()){
+            ShareLink::create([
+                'topic_id' => $topic->id,
+                'link' => $data['link'],
+                'site' => domain_from_url($data['link']),
+            ]);
+        }
+        session()->flash('success', $msg );
         return redirect()->route('topics.show', $topic->id);
     }
 
@@ -44,6 +61,31 @@ class TopicsController extends Controller
         $topic= Topic::findOrFail($id);
         $user = $topic->user;
         return view('topics.show', compact('topic', 'user'));
+    }
+
+    public function edit($id)
+    {
+        $categories = Category::get();
+        $topic= Topic::findOrFail($id);
+        $this->authorize('edit', $topic);
+        return view('topics.create_edit', compact('categories', 'topic'));
+    }
+
+    public function update($id, StoreTopicRequest $request)
+    {
+        $topic= Topic::findOrFail($id);
+        $this->authorize('update', $topic);
+
+        $data = $request->except('_token');
+
+        if ($topic->isShareLink()) {
+            $topic->share_link->link = $data['link'];
+            $topic->share_link->site = domain_from_url($data['link']);
+            $topic->share_link->save();
+        }
+        $topic->update($data);
+        session()->flash('success', '话题更新成功！');
+        return redirect()->route('topics.show', $topic->id);
     }
 
     public function destroy($id)

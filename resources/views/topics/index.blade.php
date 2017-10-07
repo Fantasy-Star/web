@@ -39,7 +39,9 @@
 
         @else
         <div class="panel-body">
-            <h3 class="text-center">还没有任何文章发布哦~</h3>
+            <h3 class="text-center">还没有任何话题发布哦~
+                <small class="text-muted">大概是被外星人禁言了=。=</small>
+            </h3>
         </div>
         @endif
 

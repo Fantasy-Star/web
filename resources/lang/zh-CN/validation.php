@@ -158,6 +158,7 @@ return [
         'personal_website'      => '个人网站',
 
         'body'                  => '内容',
+        'link'                  => '链接',
     ],
 
 ];

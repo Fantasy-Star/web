@@ -18,10 +18,17 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $topics = Topic::with('user')->paginate(7);
-        return view('topics.index', compact('topics', 'users'));
+        if( $request->get('category_id') ){
+            $topics = Topic::where('category_id' , $request->get('category_id') )->with('user')->paginate(7);
+            $current_category = $request->get('category_id');
+        }else{
+            $topics = Topic::with('user')->paginate(7);
+            $current_category = 0;
+        }
+        $categories = Category::get();
+        return view('topics.index', compact('topics', 'categories'))->with('current_category', $current_category);
     }
 
     public function create(Request $request)

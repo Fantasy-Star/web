@@ -37,7 +37,7 @@ class StoreArticleRequest extends FormRequest
                 return [
                     'title'       => 'required',
                     'body'        => 'required',
-//                    'category_id' => 'required|numeric',
+                    'category_id' => 'required|numeric',
                 ];
             }
             // UPDATE
@@ -48,7 +48,7 @@ class StoreArticleRequest extends FormRequest
                 return [
                     'title'       => 'required',
                     'body'        => 'required',
-//                    'category_id' => 'required|numeric',
+                    'category_id' => 'required|numeric',
                 ];
             }
             default:break;

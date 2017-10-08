@@ -30,6 +30,10 @@ hr {
   margin: 0px;
 }
 
+.list-group li:hover {
+  box-shadow: 0px 0px 15px rgba(9, 28, 38, 0.15);
+}
+
 /* scrollbar*/
 
 ::-webkit-scrollbar-track-piece {
@@ -155,7 +159,11 @@ footer .slogon {
 }
 
 .panel-default > .panel-heading{
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.panel-footer{
+  background-color: rgba(255,255,255,0.1);
 }
 
 .jumbotron {

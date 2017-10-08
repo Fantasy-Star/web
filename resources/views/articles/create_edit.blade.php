@@ -25,12 +25,23 @@
                             <input class="form-control" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $article->title }}" required="require">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group display-inline">
                             <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary active">
+                                @foreach ($categories as $category)
+                                    <label class="btn btn-default"  data-toggle="tooltip" title="{{ $category->description }}">
+                                        <input type="radio" name="category_id" value="{{ $category->id }}" autocomplete="off" checked>
+                                        {{ $category->name }}
+                                    </label>
+                                @endforeach
+                            </div>
+                        </div>
+                        &nbsp;
+                        <div class="form-group display-inline">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
                                     <input type="radio" name="is_original" value="yes" autocomplete="off" checked> 原创
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-default">
                                     <input type="radio" name="is_original" value="no" autocomplete="off"> 转载
                                 </label>
                             </div>

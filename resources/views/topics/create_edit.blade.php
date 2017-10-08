@@ -35,7 +35,6 @@
                                         @endcan
                                     @endforeach
                                 </div>
-
                             </div>
 
                             <div class="form-group">

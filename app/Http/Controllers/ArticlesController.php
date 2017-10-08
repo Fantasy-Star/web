@@ -6,6 +6,7 @@ use App\Http\Requests\StoreArticleRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use Auth;
 use Flash;
 
@@ -16,23 +17,33 @@ class ArticlesController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::with('user')->paginate(10);
-        return view('articles.index', compact('articles', 'users'));
+
+        if( $request->get('category_id') ){
+            $articles = Article::where('category_id' , $request->get('category_id') )->with('user')->paginate(8);
+            $current_category = $request->get('category_id');
+        }else{
+            $articles = Article::with('user')->paginate(8);
+            $current_category = 0;
+        }
+        $categories = ArticleCategory::get();
+        return view('articles.index', compact('articles', 'categories'))->with('current_category', $current_category);
     }
 
     public function create(Request $request)
     {
+        $categories = ArticleCategory::get();
         $article = new Article;
-        return view('articles.create_edit', compact('article'));
+        return view('articles.create_edit', compact('article', 'categories'));
     }
 
     public function edit($id)
     {
+        $categories = ArticleCategory::get();
         $article= Article::findOrFail($id);
         $this->authorize('edit', $article);
-        return view('articles.create_edit', compact('article'));
+        return view('articles.create_edit', compact('article', 'categories'));
     }
 
     public function store(StoreArticleRequest $request)

@@ -9,17 +9,19 @@
 <div class="col-md-12">
 
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <ul class="list-inline">
 
-            </ul>
-
-            <div class="clearfix"></div>
-        </div>
-
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="{{ $current_category == 0  ? 'active':''}}" ><a href="{{ route('articles.index') }}">全部</a></li>
+            @foreach ($categories as $category)
+            <li role="presentation" class="{{ $current_category == $category->id ? 'active':'' }}" >
+                <a href="{{ route('articles.index', ['category_id'=>$category->id]) }}">
+                    <strong>{{ $category->name }}</strong></a>
+            </li>
+            @endforeach
+        </ul>
         @if ( ! $articles->isEmpty())
 
-        <div >
+        <div style="background-color: rgba(255,255,255,0.5)">
             <div class="panel-body">
                 @include('articles.partials.articles')
             </div>

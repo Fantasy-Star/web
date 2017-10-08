@@ -72,24 +72,68 @@ class CategoriesTableSeeder extends Seeder
                     'parent_id'   => 0,
                     'post_count'  => 0,
                     'weight'      => 96,
-                    'name'        => '教程',
-                    'slug'        => 'tutorial',
-                    'description' => '教程文章请存放在此分类下，转载文章请注明「转载于」声明。',
-                    'created_at'  => '2017-10-06 10:00:00',
-                    'updated_at'  => '2017-10-06 10:00:00',
-                    'deleted_at'  => null,
-                ),
-            5 =>
-                array(
-                    'id'          => 6,
-                    'parent_id'   => 0,
-                    'post_count'  => 0,
-                    'weight'      => 95,
                     'name'        => '普通',
                     'slug'        => 'simple',
                     'description' => '普通讨论帖~',
                     'created_at'  => '2017-10-06 10:00:00',
                     'updated_at'  => '2017-10-06 10:00:00',
+                    'deleted_at'  => null,
+                ),
+        ));
+
+//        article_categories
+        \DB::table('article_categories')->delete();
+        \DB::table('article_categories')->insert(array(
+            0 =>
+                array(
+                    'id'          => 1,
+                    'parent_id'   => 0,
+                    'article_count'  => 0,
+                    'weight'      => 100,
+                    'name'        => '活动',
+                    'slug'        => 'activity',
+                    'description' => '参与活动的文章~',
+                    'created_at'  => '2017-10-08 10:00:00',
+                    'updated_at'  => '2017-10-08 10:00:00',
+                    'deleted_at'  => null,
+                ),
+            1 =>
+                array(
+                    'id'          => 2,
+                    'parent_id'   => 0,
+                    'article_count'  => 0,
+                    'weight'      => 99,
+                    'name'        => '小说',
+                    'slug'        => 'novel',
+                    'description' => '展示自己平时写的小说~',
+                    'created_at'  => '2017-10-08 10:00:00',
+                    'updated_at'  => '2017-10-08 10:00:00',
+                    'deleted_at'  => null,
+                ),
+            2 =>
+                array(
+                    'id'          => 3,
+                    'parent_id'   => 0,
+                    'article_count'  => 0,
+                    'weight'      => 98,
+                    'name'        => '科普',
+                    'slug'        => 'science',
+                    'description' => '提高知♂识水平的科普类文章~',
+                    'created_at'  => '2017-10-08 10:00:00',
+                    'updated_at'  => '2017-10-08 10:00:00',
+                    'deleted_at'  => null,
+                ),
+            3 =>
+                array(
+                    'id'          => 4,
+                    'parent_id'   => 0,
+                    'article_count'  => 0,
+                    'weight'      => 97,
+                    'name'        => '教程',
+                    'slug'        => 'tutorial',
+                    'description' => '教程文章请存放在此分类下，转载文章请注明「转载于」声明。',
+                    'created_at'  => '2017-10-08 10:00:00',
+                    'updated_at'  => '2017-10-08 10:00:00',
                     'deleted_at'  => null,
                 ),
         ));

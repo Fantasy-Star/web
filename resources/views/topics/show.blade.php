@@ -43,6 +43,8 @@
 
         </div>
 
+        @include('topics.partials._praise')
+
         @include('plugins.changyan', ['sid' => 'topic_'.$topic->id])
 
     </div>

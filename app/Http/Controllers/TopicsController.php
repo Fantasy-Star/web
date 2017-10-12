@@ -67,7 +67,9 @@ class TopicsController extends Controller
     {
         $topic= Topic::findOrFail($id);
         $user = $topic->user;
-        return view('topics.show', compact('topic', 'user'));
+        $topic->increment('view_count', 1);
+        $praisedUsers = $topic->praises()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
+        return view('topics.show', compact('topic', 'user', 'praisedUsers'));
     }
 
     public function edit($id)
@@ -102,5 +104,27 @@ class TopicsController extends Controller
         $topic->delete();
         session()->flash('success', '成功删除话题！');
         return redirect()->route('topics.index');
+    }
+
+    /**
+     * ----------------------------------------
+     * User Topic Praise function
+     * ----------------------------------------
+     */
+
+    public function praise($id)
+    {
+        $topic = Topic::find($id);
+        $topic->praises()->create(['user_id' => Auth::user()->id, 'is' => 'praise']);
+        $topic->increment('praise_count', 1);
+        return redirect()->back();
+    }
+
+    public function unpraise($id)
+    {
+        $topic = Topic::find($id);
+        $topic->praises()->ByWhom(Auth::id())->WithType('praise')->delete();
+        $topic->decrement('praise_count', 1);
+        return redirect()->back();
     }
 }

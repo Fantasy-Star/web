@@ -79,10 +79,22 @@ Route::delete('/books/order/{book}', 'BorrowController@destroy')->name('borrow.d
 
 // Article
 Route::resource('articles', 'ArticlesController');
+# ---------- User Article Actions ----------
+
+Route::group(['before' => 'auth'], function () {
+    Route::get('/articles/{id}/praise', 'ArticlesController@praise')->name('articles.praise');
+    Route::get('/articles/{id}/unpraise', 'ArticlesController@unpraise')->name('articles.unpraise');
+});
 
 # ------------------ Topic ------------------------
 Route::resource('topics', 'TopicsController');
 Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
+# ---------- User Topic Actions ----------
+
+Route::group(['before' => 'auth'], function () {
+    Route::get('/topics/{id}/praise', 'TopicsController@praise')->name('topics.praise');
+    Route::get('/topics/{id}/unpraise', 'TopicsController@unpraise')->name('topics.unpraise');
+});
 
 # ------------------ ShareLinks --------------------
 

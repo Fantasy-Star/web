@@ -17,4 +17,19 @@ class Article extends Model
     {
         return $this->belongsTo(ArticleCategory::class);
     }
+
+    //    praise
+    public function praises()
+    {
+        return $this->morphMany(Praise::class, 'praisable');
+    }
+    public function praisedUsers()
+    {
+        $user_ids = Praise::where('praisable_type', Topic::class)
+            ->where('praisable_id', $this->id)
+            ->where('is', 'praise')
+            ->lists('user_id')
+            ->toArray();
+        return User::whereIn('id', $user_ids)->get();
+    }
 }

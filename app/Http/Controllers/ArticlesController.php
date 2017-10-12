@@ -59,7 +59,9 @@ class ArticlesController extends Controller
     {
         $article= Article::findOrFail($id);
         $user = $article->user;
-        return view('articles.show', compact('article', 'user'));
+        $article->increment('view_count', 1);
+        $praisedUsers = $article->praises()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
+        return view('articles.show', compact('article', 'user', 'praisedUsers'));
     }
 
     public function update($id, StoreArticleRequest $request)
@@ -81,5 +83,27 @@ class ArticlesController extends Controller
         $article->delete();
         session()->flash('success', '成功删除文章！');
         return redirect()->route('articles.index');
+    }
+
+    /**
+     * ----------------------------------------
+     * User Article Praise function
+     * ----------------------------------------
+     */
+
+    public function praise($id)
+    {
+        $article = Article::find($id);
+        $article->praises()->create(['user_id' => Auth::user()->id, 'is' => 'praise']);
+        $article->increment('praise_count', 1);
+        return redirect()->back();
+    }
+
+    public function unpraise($id)
+    {
+        $article = Article::find($id);
+        $article->praises()->ByWhom(Auth::id())->WithType('praise')->delete();
+        $article->decrement('praise_count', 1);
+        return redirect()->back();
     }
 }

@@ -140,4 +140,19 @@ class Topic extends Model
         return $this->category_id == config('fantasystar.share_category_id');
     }
 
+//    praise
+    public function praises()
+    {
+        return $this->morphMany(Praise::class, 'praisable');
+    }
+    public function praisedUsers()
+    {
+        $user_ids = Praise::where('praisable_type', Topic::class)
+            ->where('praisable_id', $this->id)
+            ->where('is', 'praise')
+            ->lists('user_id')
+            ->toArray();
+        return User::whereIn('id', $user_ids)->get();
+    }
+
 }

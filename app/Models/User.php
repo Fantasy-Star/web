@@ -167,4 +167,15 @@ class User extends Authenticatable
         }
         $this->orderings()->detach($book_ids);
     }
+
+//    praise
+    public function praisedTopics()
+    {
+        return $this->morphedByMany(Topic::class, 'praisable', 'praises')->withPivot('created_at');
+    }
+
+    public function praisedArticles()
+    {
+        return $this->morphedByMany(Article::class, 'praisable', 'praises')->withPivot('created_at');
+    }
 }

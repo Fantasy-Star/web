@@ -37,23 +37,25 @@
 
                 <div class="media-right col-md-3">
                     <div class="article-info">
-                        <span title="作者" class="text-muted">
+                        <span title="作者" class="text-primary">
                             &nbsp; <i class="glyphicon glyphicon-user"></i> / {{ $article->user->name }}
                         </span>
                         <br>
                         <span title="评论数" class="text-muted">
-                            &nbsp; <i class="glyphicon glyphicon-comment"></i> / {{ $article->reply_count }}
+                            &nbsp; <i class="glyphicon glyphicon-comment"></i> /
+                            {{--{{ $article->reply_count }}--}}
+                            @include('plugins.changyan_count', ['sourceId' => 'article_' . $article->id])
                         </span>
                         <br>
-                        <span title="点赞数" class="text-muted">
+                        <span title="点赞数" class="text-success">
                             &nbsp; <i class="glyphicon glyphicon-thumbs-up"></i> / {{ $article->praise_count }}
                         </span>
                         <br>
-                        <span title="查看数" class="text-muted">
+                        <span title="查看数" class="text-warning">
                             &nbsp; <i class="glyphicon glyphicon-eye-open"></i> / {{ number_shorten($article->view_count) }}
                         </span>
                         <br>
-                        <span title="{{ $article->updated_at }}" class="text-muted">
+                        <span title="最后动态：{{ $article->updated_at }}" class="text-danger">
                             &nbsp; <i class="glyphicon glyphicon-time"></i> / {{ $article->updated_at }}
                         </span>
                     </div>

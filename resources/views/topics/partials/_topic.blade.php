@@ -37,7 +37,9 @@
                 </span>
                 <br>
                 <span title="评论数" class="text-muted">
-                    &nbsp; <i class="glyphicon glyphicon-comment"></i> / {{ $topic->reply_count }}
+                    &nbsp; <i class="glyphicon glyphicon-comment"></i> /
+                    {{--{{ $topic->reply_count }}--}}
+                    @include('plugins.changyan_count', ['sourceId' => 'topic_' . $topic->id])
                 </span>
                 <br>
                 <span title="点赞数" class="text-muted">

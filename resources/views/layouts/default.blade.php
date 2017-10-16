@@ -25,6 +25,9 @@
   <body>
     <script src="{{ asset('/assets/js/lib/three.min.js') }}"></script>
     <script src="{{ asset('/assets/js/dot/dots.js') }}"></script>
+
+    <div class="bg-image"></div>
+
     @include('layouts._header')
 
     <div class="main container">

@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="col-md-12">
+<div class="col-md-12" >
 
     <div class="panel panel-default">
         <ul class="nav nav-tabs">
@@ -16,9 +16,8 @@
             @endforeach
         </ul>
 
+        <div style="background-color: rgba(255,255,255,0.7);">
         @if ( ! $topics->isEmpty())
-
-        <div style="background-color: rgba(255,255,255,0.7); min-height: 500px;">
             <div class="panel-body">
                 @if (count($topics))
                     <ul class="list-group row media-list">
@@ -34,15 +33,20 @@
             <div class="panel-footer text-center">
                 {!! $topics->render() !!}
             </div>
-        </div>
-
         @else
-        <div class="panel-body">
+        <div class="panel-body" style="padding-bottom: 0px;">
             <h3 class="text-center">还没有任何话题发布哦~
                 <small class="text-muted">大概是被外星人禁言了=。=</small>
             </h3>
+            <br>
+            <hr>
+            <div class="text-center m-t-30">
+                <img style="max-width:250px;" src="{{ asset('/assets/img/yunyoujun/daze.png') }}" alt="一脸智障.png">
+            </div>
         </div>
         @endif
+        </div>
+
 
     </div>
 </div>

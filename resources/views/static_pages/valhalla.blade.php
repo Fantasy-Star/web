@@ -46,10 +46,20 @@
                         </span> &nbsp;
                         <span class=" label label-info">
                             {{ $hero->position }}
-                        </span>
+                        </span> &nbsp;
+                        @if($hero->title)
+                        <span class=" label label-danger" data-toggle="tooltip" title="谥号">
+                            {{ $hero->title }}
+                        </span> &nbsp;
+                        @endif
+                        @if($hero->nickname)
+                        <span class=" label label-warning" data-toggle="tooltip" title="昵称">
+                            {{ $hero->nickname }}
+                        </span> &nbsp;
+                        @endif
                         @if($hero->user_id)
                         <span>
-                            &nbsp; <small class="text-muted">{{ $hero->getHeroInfo()->introduction }}</small>
+                            <small class="text-muted">{{ $hero->getHeroInfo()->introduction }}</small>
                         </span>
                         @endif
                     </div>

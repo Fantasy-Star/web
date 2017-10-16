@@ -11,9 +11,13 @@ body {
   /*background-attachment: fixed;*/
   /*background-size: cover;*/
   font-family: 'Raleway','San Francisco','Microsoft YaHei';
-  /*background-color: black;*/
-  background-color: rgba(136, 169, 204, 0.8);
-  transition: background-color 2s ease-in-out;
+  background: linear-gradient(rgba(136, 169, 204, 0.5), rgba(7, 7, 7, 0.5));
+  background-color: rgba(136, 169, 204, 0.9);
+  transition: background 2s ease-in-out;
+}
+
+body:hover{
+  background-color: rgba(10,10,10,0.9) ;
 }
 
 hr {

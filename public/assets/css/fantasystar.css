@@ -12,11 +12,3 @@
     /*!*filter: blur(1px);*!*/
     /*opacity: 1;*/
 /*}*/
-
-body:hover{
-    background-color: rgba(10,10,10,0.9) ;
-    /*background-image: url("/assets/img/pattern.jpg");*/
-    /*opacity: 0.3;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center ;*/
-}

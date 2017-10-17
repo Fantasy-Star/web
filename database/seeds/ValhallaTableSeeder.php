@@ -204,7 +204,7 @@ class ValhallaTableSeeder extends Seeder
                     'nickname' => '',
                     'position' => '小说部副部长',
                     'department' => 1,
-                    'user_id' => null,
+                    'user_id' => 13,
                     'description' => '',
                 ),
             16 =>
@@ -372,7 +372,7 @@ class ValhallaTableSeeder extends Seeder
                     'nickname' => '',
                     'position' => '科技部副部长',
                     'department' => 3,
-                    'user_id' => null,
+                    'user_id' => 12,
                     'description' => '',
                 ),
             30 =>
@@ -405,10 +405,10 @@ class ValhallaTableSeeder extends Seeder
                     'year' => 2017,
                     'name' => '龚逸文',
                     'title' => '',
-                    'nickname' => '',
+                    'nickname' => '大楚',
                     'position' => '社长',
                     'department' => 0,
-                    'user_id' => null,
+                    'user_id' => 11,
                     'description' => '<img src="http://media.yunyoujun.cn/FantasyStar/img/valhalla/杀异性.png" alt="大楚：“杀异性”">',
                 ),
             33 =>

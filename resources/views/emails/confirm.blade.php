@@ -76,7 +76,7 @@
           </div>
 
           <p class="links">
-            请点击下面的链接完成注册：
+            <strong>请点击下面的链接完成注册：<strong>
             <a href="{{ route('confirm_email', $user->activation_token) }}">
               {{ route('confirm_email', $user->activation_token) }}
             </a>

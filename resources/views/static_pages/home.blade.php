@@ -29,7 +29,7 @@
       <img src="{{ asset('/assets/img/logo/logo.png') }}" alt="Logo" class="img-circle" id="logo">
 
       <h1>Hello , Fantasy Star !</h1>
-      <canvas id="canvas" style="position: absolute;top:-40px;left:10px;z-index: 100;"></canvas>
+      <canvas id="canvas" style="position: absolute;top:-40px;left:0px;z-index: 100;"></canvas>
       <p class="lead">
         <h3 class="m-b-30">
             <a href="{{ route('about') }}" data-toggle="tooltip" data-placement="bottom" title="关于我们">幻星科幻协会 - Fantasy Star</a>
@@ -60,7 +60,7 @@
     <script type="text/javascript">
     	var txt = "幻星科幻协会";
     	var txtH = 24;
-    	var font = "Raleway,San Francisco";
+    	var font = "Microsoft Yahei";
     	var rayColor1 = "#111111";
     	var rayColor2 = "#aaaaaa";
     	var rayColor3 = "#909dff";
@@ -68,7 +68,7 @@
     	var canvas = document.getElementById("canvas");
     	var ctx = canvas.getContext("2d");
     	// var cw = canvas.width = canvas.parentNode.offsetWidth-120;
-    	var cw = canvas.width = window.innerWidth-20;
+    	var cw = canvas.width = window.innerWidth-10;
     	var ch = canvas.height = 300;
 
     	var w2 = cw/2;

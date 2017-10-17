@@ -67,10 +67,10 @@
           <div class="title m-b-md">
               Hello , Fantasy Star !
           </div>
-          <h1>欢迎您加入<a href="http://fantasystar.yunyoujun.cn">幻星科幻协会</a>！</h1>
+          <h1>欢迎您加入<strong>幻星科幻协会</strong>！</h1>
 
           <div class="links">
-            <a href="http://fantasystar.yunyoujun.cn">Fantasy Star</a>
+            <a href="http://association.yunyoujun.cn">Fantasy Star</a>
             <a href="http://www.yunyoujun.cn/">YunYouJun</a>
             <a href="https://github.com/YunYouJun/FantasyStar-Web">GitHub</a>
           </div>

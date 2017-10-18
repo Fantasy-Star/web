@@ -1,0 +1,18 @@
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+A {
+	TEXT-DECORATION: none
+}
+IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+.vv {
+	VISIBILITY: visible! important
+}

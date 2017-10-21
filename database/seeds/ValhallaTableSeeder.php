@@ -441,7 +441,7 @@ class ValhallaTableSeeder extends Seeder
                     'year' => 2017,
                     'name' => '苏征策',
                     'title' => '',
-                    'nickname' => '',
+                    'nickname' => '阿苏巴',
                     'position' => '小说部部长',
                     'department' => 1,
                     'user_id' => null,

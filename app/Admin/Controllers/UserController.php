@@ -76,6 +76,10 @@ class UserController extends Controller
             $grid->id('ID')->sortable();
             $grid->column('name', '用户名');
             $grid->email();
+            $grid->column('gender','性别');
+            $grid->column('stu_id','学号');
+            $grid->column('tel','手机');
+            $grid->column('major','专业');
             $grid->column('identity','身份');
             $grid->created_at();
             $grid->updated_at();
@@ -92,9 +96,9 @@ class UserController extends Controller
         return Admin::form(User::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->column('name', '用户名');
+            $form->text('name', '用户名');
             $form->display('email');
-            $form->display('identity','身份');
+            $form->text('identity','身份');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });

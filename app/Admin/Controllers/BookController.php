@@ -106,9 +106,9 @@ class BookController extends Controller
             $form->text('publisher','出版社');
             $form->date('pub_date','出版日期');
             $form->currency('price','价格')->symbol('￥');
-            $form->currency('total','总数');
+            $form->number('total','总数');
             $form->text('note','备注');
-            $form->editor('description','内容描述');
+            $form->ckeditor('description','内容描述');
 
             $form->tags('tags');
             $form->image('book_pic','封面图片');

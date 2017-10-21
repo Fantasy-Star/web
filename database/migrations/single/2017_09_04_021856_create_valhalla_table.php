@@ -22,7 +22,7 @@ class CreateValhallaTable extends Migration
             $table->string('position');
             $table->tinyInteger('department')->default(0)->comment('社团部门');
             $table->integer('user_id')->unsigned()->nullable()->comment('本站用户ID');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

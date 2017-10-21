@@ -24,8 +24,8 @@ class RoleController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('英灵殿');
+            $content->description('幻星元老院');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class RoleController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('编辑');
+            $content->description('英灵信息');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class RoleController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('新增');
+            $content->description('元老');
 
             $content->body($this->form());
         });
@@ -80,8 +80,8 @@ class RoleController extends Controller
             $grid->column('user_id','UID');
             $grid->column('description','描述');
 
-//            $grid->created_at();
-//            $grid->updated_at();
+            $grid->created_at();
+            $grid->updated_at();
         });
     }
 
@@ -103,8 +103,8 @@ class RoleController extends Controller
             $form->number('department','部门');
             $form->number('user_id','UID');
             $form->text('description','描述');
-//            $form->display('created_at', 'Created At');
-//            $form->display('updated_at', 'Updated At');
+            $form->display('created_at', 'Created At');
+            $form->display('updated_at', 'Updated At');
         });
     }
 }

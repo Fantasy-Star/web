@@ -6,10 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "encore/laravel-admin": "^1.5",
+        "encore/laravel-admin": "1.5.*",
         "fideloper/proxy": "~3.3",
+        "laravel-admin-ext/config": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "maatwebsite/excel": "~2.1.0",
         "orangehill/iseed": "^2.5",
         "overtrue/laravel-lang": "~3.0"
     },

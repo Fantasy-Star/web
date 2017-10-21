@@ -15,8 +15,8 @@ class HomeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('Fantasy Star');
-            $content->description('后台管理界面.');
+            $content->header('Fantasy Star | 幻星科幻协会');
+            $content->description('后台管理.');
 
             $content->row(Dashboard::title());
 

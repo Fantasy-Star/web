@@ -2,8 +2,6 @@
 
 ## 幻星科幻协会 - Fantasy Star Association
 
----
-
 ### Introduce
 
 A website about science society association.
@@ -15,10 +13,9 @@ And build a organization, separate it to components.
 
 You can visit permanent links. And find more info in this orgaization.
 
-- [Homepage | FantasyStar](https://fantasy-star.github.io) <https://fantasy-star.github.io>
-- [Valhalla | FantasyStar](https://fantasy-star.github.io/valhalla) <https://fantasy-star.github.io/valhalla>
-
-- [Old Web Preview](https://fantasy-star.herokuapp.com) <https://fantasy-star.herokuapp.com>
+- [Homepage | FantasyStar](https://fantasy-star.github.io)
+- [Valhalla | FantasyStar](https://fantasy-star.github.io/valhalla)
+- [Old Web Preview](https://fantasy-star.herokuapp.com)
 
 ### Function
 
@@ -83,7 +80,7 @@ I have no money to continue to support my server.
 
 So I give up it, and use [heroku](https://www.heroku.com/).
 
-<fantasy-star.herokuapp.com>
+[fantasy-star.herokuapp.com](https://fantasy-star.herokuapp.com)
 
 ```sh
 heroku login
@@ -103,8 +100,8 @@ heroku run php artisan migrate
 
 ### Intend
 
-- Novel display
-- Vote for product
+- [ ] Novel display
+- [ ] Vote for product
 
 ---
 

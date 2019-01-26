@@ -6,7 +6,7 @@
       @include('books._book_info', ['book' => $book])
   </div>
 
-  @include('plugins.changyan', ['sid' => 'book_comment_'.$book->id])
+  <!-- @include('plugins.changyan', ['sid' => 'book_comment_'.$book->id]) -->
 
 </div>
 

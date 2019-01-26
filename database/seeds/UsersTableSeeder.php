@@ -28,10 +28,10 @@ class UsersTableSeeder extends Seeder
         $user->city = '江苏省连云港市';
         $user->major = '计算机科学与技术';
         $user->class = '计算机141';
-        $user->tel = '15000985609';
+        $user->tel = '16651050730';
         $user->weibo_name = '机智的云游君';
-        $user->weibo_link = 'http://weibo.com/jizhideyunyoujun';
-        $user->personal_website = 'http://yunyoujun.cn';
+        $user->weibo_link = 'https://weibo.com/jizhideyunyoujun';
+        $user->personal_website = 'https://yunyoujun.cn';
         $user->qq = '910426929';
         $user->wechat = 'QQ910426929';
         $user->introduction = 'All at sea.';

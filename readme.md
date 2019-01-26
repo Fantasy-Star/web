@@ -18,6 +18,8 @@ You can visit permanent links. And find more info in this orgaization.
 - [Homepage | FantasyStar](https://fantasy-star.github.io) <https://fantasy-star.github.io>
 - [Valhalla | FantasyStar](https://fantasy-star.github.io/valhalla) <https://fantasy-star.github.io/valhalla>
 
+- [Old Web Preview](https://fantasy-star.herokuapp.com) <https://fantasy-star.herokuapp.com>
+
 ### Function
 
 - Member management
@@ -80,6 +82,24 @@ php artisan serve
 I have no money to continue to support my server.
 
 So I give up it, and use [heroku](https://www.heroku.com/).
+
+<fantasy-star.herokuapp.com>
+
+```sh
+heroku login
+heroku keys:add
+cd FantasyStar/web
+echo web: vendor/bin/heroku-php-apache2 public/ > Procfile
+# declare php
+heroku buildpacks:set heroku/php
+```
+
+#### PostgreSQL in Heroku
+
+```sh
+# heroku pg:credentials:url DATABASE
+heroku run php artisan migrate
+```
 
 ### Intend
 

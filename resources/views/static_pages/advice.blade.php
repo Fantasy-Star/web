@@ -33,6 +33,6 @@
 
   </div>
 
-  @include('plugins.changyan', ['sid' => 'advice'])
+  <!-- @include('plugins.changyan', ['sid' => 'advice']) -->
 
 @stop

@@ -45,7 +45,7 @@
 
         @include('articles.partials._praise')
 
-        @include('plugins.changyan', ['sid' => 'article_'.$article->id])
+        <!-- @include('plugins.changyan', ['sid' => 'article_'.$article->id]) -->
 
     </div>
 

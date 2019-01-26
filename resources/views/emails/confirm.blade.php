@@ -70,8 +70,8 @@
           <h1>欢迎您加入<strong>幻星科幻协会</strong>！</h1>
 
           <div class="links">
-            <a href="http://association.yunyoujun.cn">Fantasy Star</a>
-            <a href="http://www.yunyoujun.cn/">YunYouJun</a>
+            <a href="https://fantasy-star.herokuapp.com">Fantasy Star</a>
+            <a href="https://yunyoujun.cn/">YunYouJun</a>
             <a href="https://github.com/YunYouJun/FantasyStar-Web">GitHub</a>
           </div>
 

@@ -93,6 +93,6 @@
 
   </div>
 
-  @include('plugins.changyan', ['sid' => 'sponsor'])
+  <!-- @include('plugins.changyan', ['sid' => 'sponsor']) -->
 
 @stop

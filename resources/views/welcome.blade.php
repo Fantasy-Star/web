@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="links">
-                  <a href="http://www.yunyoujun.cn/">YunYouJun</a>
+                  <a href="https://yunyoujun.cn/">YunYouJun</a>
                   <a href="https://github.com/YunYouJun/FantasyStar-Web">GitHub</a>
                 </div>
             </div>

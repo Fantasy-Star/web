@@ -31,7 +31,7 @@
                             <img src="{{ $hero->getHeroInfo()->gravatar() }}}" alt="{{ $hero->name }}" class="img-thumbnail gravatar m-b-10"/>
                         </a>
                     @else
-                        <img src="http://www.gravatar.com/avatar/" class="img-thumbnail gravatar m-b-10">
+                        <img src="https://www.gravatar.com/avatar/" class="img-thumbnail gravatar m-b-10">
                     @endif
 
                     <a class="label label-primary" href="{{ $hero->user_id ? route('users.show', [$hero->user_id]) : 'javascript:;' }}"
@@ -124,6 +124,6 @@
         @endforeach
     </div>
 
-    @include('plugins.changyan', ['sid' => 'valhalla'])
+    <!-- @include('plugins.changyan', ['sid' => 'valhalla']) -->
 
 @stop

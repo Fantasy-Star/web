@@ -23,6 +23,6 @@
 
   </div>
 
-  @include('plugins.changyan', ['sid' => 'bug'])
+  <!-- @include('plugins.changyan', ['sid' => 'bug']) -->
 
 @stop

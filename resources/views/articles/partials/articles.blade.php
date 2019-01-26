@@ -41,12 +41,12 @@
                             &nbsp; <i class="glyphicon glyphicon-user"></i> / {{ $article->user->name }}
                         </span>
                         <br>
-                        <span title="评论数" class="text-muted">
+                        <!-- <span title="评论数" class="text-muted">
                             &nbsp; <i class="glyphicon glyphicon-comment"></i> /
                             {{--{{ $article->reply_count }}--}}
                             @include('plugins.changyan_count', ['sourceId' => 'article_' . $article->id])
                         </span>
-                        <br>
+                        <br> -->
                         <span title="点赞数" class="text-success">
                             &nbsp; <i class="glyphicon glyphicon-thumbs-up"></i> / {{ $article->praise_count }}
                         </span>

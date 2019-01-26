@@ -409,7 +409,7 @@ class ValhallaTableSeeder extends Seeder
                     'position' => '社长',
                     'department' => 0,
                     'user_id' => 11,
-                    'description' => '<img src="http://media.yunyoujun.cn/FantasyStar/img/valhalla/杀异性.png" alt="大楚：“杀异性”">',
+                    'description' => '<img src="https://media.yunyoujun.cn/FantasyStar/img/valhalla/杀异性.png" alt="大楚：“杀异性”">',
                 ),
             33 =>
                 array(

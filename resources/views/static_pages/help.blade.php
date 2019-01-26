@@ -36,7 +36,7 @@
         </div>
         <div id="gravatar" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            <h2><small>头像采用</small> <a href="http://cn.gravatar.com/" target="_blank">Gravatar</a> <small>服务</small></h2>
+            <h2><small>头像采用</small> <a href="https://cn.gravatar.com/" target="_blank">Gravatar</a> <small>服务</small></h2>
             <p>
               以便节约服务器资源，以及方便使用<small>（<del>才不是我懒得写这方面功能呢！</del>）</small>
             </p>
@@ -92,6 +92,6 @@
     </div>
   </div>
 
-  @include('plugins.changyan', ['sid' => 'help'])
+  <!-- @include('plugins.changyan', ['sid' => 'help']) -->
 
 @stop

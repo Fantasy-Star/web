@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
         </button>
         <!-- <a class="navbar-brand" href="{{ route('home') }}">
-          <img width="25" height="25" src="http://www.gravatar.com/avatar/5b668c9450f847d0c5b6ce4ae53ca6b6" alt="FantasyStar"/>
+          <img width="25" height="25" src="https://www.gravatar.com/avatar/5b668c9450f847d0c5b6ce4ae53ca6b6" alt="FantasyStar"/>
         </a> -->
         <a class="navbar-brand" href="{{ route('home') }}">
           <strong class="text-primary">Fantasy Star</strong> <strong class="text-muted"></strong>
